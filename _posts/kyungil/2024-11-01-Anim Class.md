@@ -87,88 +87,88 @@ void Draw(sf::RenderWindow& window)
 
 ## public 멤버 함수 설명
 
-- **bool** LoadFromFile**(const std::string& path);**
+- **bool** LoadFromFile**(const std::string& path);**  
 경로에서 텍스처를 로드합니다.
-- **void** AddFrame**(const Frame& frame);**
-IntRect{x, y, width, height}와 duration(지속 시간)으로 이루어진 frame을 입력받습니다.
-- **void** SetName**(const std::string& name);**
+- **void** AddFrame**(const Frame& frame);**  
+IntRect{x, y, width, height}와 duration(지속 시간)으로 이루어진 frame을 입력받습니다.  
+- **void** SetName**(const std::string& name);**  
 이름을 설정합니다.
-- **void** SetPosition**(const sf::Vector2f& pos);**
+- **void** SetPosition**(const sf::Vector2f& pos);**  
 위치를 설정합니다.
-- **void** SetScale**(const sf::Vector2f& scale);**
+- **void** SetScale**(const sf::Vector2f& scale);**  
 스케일을 설정합니다.
-- **void** SetScale**(float scaleX, float scaleY);**
+- **void** SetScale**(float scaleX, float scaleY);**  
 스케일을 설정합니다.
-- **void** SetFlipX**(bool enabled);**
+- **void** SetFlipX**(bool enabled);**  
 enabled가 true일 경우 텍스처를 X축 반전
-- **void** SetFlipY**(bool enabled);**
+- **void** SetFlipY**(bool enabled);**  
 enabled가 true일 경우 텍스처를 Y축 반전
-- **std::string** GetName**() const;**
+- **std::string** GetName**() const;**  
 현재 ****이름 반환
-- **sf::Vector2f** GetPosition**() const;**
+- **sf::Vector2f** GetPosition**() const;**  
 현재 위치 반환
-- **sf::Vector2f** GetScale**() const;**
+- **sf::Vector2f** GetScale**() const;**  
 현재 스케일 반환
-- **bool** IsFlipX**() const;**
+- **bool** IsFlipX**() const;**  
 X축 반전 상태일 경우 true
-- **bool** IsFlipY**() const;**
+- **bool** IsFlipY**() const;**  
 Y축 반전 상태일 경우 true
-- **bool** IsFrameEnd**() const;**
+- **bool** IsFrameEnd**() const;**  
 시퀀스 프레임이 모두 재생되었을 경우 true , 첫 프레임부터 재시작 시 false
-- **void** SetAnimSequence**(const sf::IntRect& rect, int stride, const std::vector<double>& durations, int count);**
-시퀀스 프레임을 ****일정한 간격(stride)만큼 설정합니다. 
-rect: 불러올 프레임의 크기
-stride: 프레임 간의 간격
-durations: 각 프레임 별 재생 시간
+- **void** SetAnimSequence**(const sf::IntRect& rect, int stride, const std::vector<double>& durations, int count);**  
+시퀀스 프레임을일정한 간격(stride)만큼 설정합니다.  
+rect: 불러올 프레임의 크기  
+stride: 프레임 간의 간격  
+durations: 각 프레임 별 재생 시간  
 count: 불러올 프레임 개수
-- **void** SetAnimSequenceRev**(const sf::IntRect& rect, int stride, const std::vector<double>& durations, int count);**
-시퀀스 프레임을 ****일정한 간격(stride)만큼 역순으로 설정합니다. 
-rect: 불러올 프레임의 크기
-stride: 프레임 간의 간격
-durations: 각 프레임 별 재생 시간
+- **void** SetAnimSequenceRev**(const sf::IntRect& rect, int stride, const std::vector<double>& durations, int count);**  
+시퀀스 프레임을 일정한 간격(stride)만큼 역순으로 설정합니다.  
+rect: 불러올 프레임의 크기  
+stride: 프레임 간의 간격  
+durations: 각 프레임 별 재생 시간  
 count: 불러올 프레임 개수
-- **void** SetAnimSequence**(const sf::IntRect& rect, int stride, double duration, int count);**
-시퀀스 프레임을 ****일정한 간격(stride)만큼 설정합니다. 
-rect: 불러올 프레임의 크기
-stride: 프레임 간의 간격
-duration: 모든 프레임의 균일 재생 시간
+- **void** SetAnimSequence**(const sf::IntRect& rect, int stride, double duration, int count);**  
+시퀀스 프레임을 일정한 간격(stride)만큼 설정합니다.  
+rect: 불러올 프레임의 크기  
+stride: 프레임 간의 간격  
+duration: 모든 프레임의 균일 재생 시간  
 count: 불러올 프레임 개수
-- **void** SetAnimSequenceRev**(const sf::IntRect& rect, int stride, double duration, int count);**
-시퀀스 프레임을 ****일정한 간격(stride)만큼 역순으로 설정합니다. 
-rect: 불러올 프레임의 크기
-stride: 프레임 간의 간격
-duration: 모든 프레임의 균일 재생 시간
+- **void** SetAnimSequenceRev**(const sf::IntRect& rect, int stride, double duration, int count);**  
+시퀀스 프레임을 일정한 간격(stride)만큼 역순으로 설정합니다.  
+rect: 불러올 프레임의 크기  
+stride: 프레임 간의 간격  
+duration: 모든 프레임의 균일 재생 시간  
 count: 불러올 프레임 개수
-- **void** AddAnimSequence**(const sf::IntRect& rect, int stride, const std::vector<double>& durations, int count);**
-시퀀스 프레임을 ****일정한 간격(stride)만큼 기존 시퀀스에 추가합니다. 
-rect: 불러올 프레임의 크기
-stride: 프레임 간의 간격
-durations: 각 프레임 별 재생 시간
+- **void** AddAnimSequence**(const sf::IntRect& rect, int stride, const std::vector<double>& durations, int count);**  
+시퀀스 프레임을 일정한 간격(stride)만큼 기존 시퀀스에 추가합니다.  
+rect: 불러올 프레임의 크기  
+stride: 프레임 간의 간격  
+durations: 각 프레임 별 재생 시간  
 count: 불러올 프레임 개수
-- **void** AddAnimSequenceRev**(const sf::IntRect& rect, int stride, const std::vector<double>& durations, int count);**
-시퀀스 프레임을 ****일정한 간격(stride)만큼 역순으로 기존 시퀀스에 추가합니다. 
-rect: 불러올 프레임의 크기
-stride: 프레임 간의 간격
-durations: 각 프레임 별 재생 시간
+- **void** AddAnimSequenceRev**(const sf::IntRect& rect, int stride, const std::vector<double>& durations, int count);**  
+시퀀스 프레임을 일정한 간격(stride)만큼 역순으로 기존 시퀀스에 추가합니다.  
+rect: 불러올 프레임의 크기  
+stride: 프레임 간의 간격  
+durations: 각 프레임 별 재생 시간  
 count: 불러올 프레임 개수
-- **void** AddAnimSequence**(const sf::IntRect& rect, int stride, double duration, int count);**
-시퀀스 프레임을 ****일정한 간격(stride)만큼 설정합니다. 
-rect: 불러올 프레임의 크기
-stride: 프레임 간의 간격
-duration: 모든 프레임의 균일 재생 시간
+- **void** AddAnimSequence**(const sf::IntRect& rect, int stride, double duration, int count);**  
+시퀀스 프레임을 일정한 간격(stride)만큼 설정합니다.  
+rect: 불러올 프레임의 크기  
+stride: 프레임 간의 간격  
+duration: 모든 프레임의 균일 재생 시간  
 count: 불러올 프레임 개수
-- **void** AddAnimSequenceRev**(const sf::IntRect& rect, int stride, double duration, int count);**
-시퀀스 프레임을 ****일정한 간격(stride)만큼 역순으로 기존 시퀀스에 추가합니다. 
-rect: 불러올 프레임의 크기
-stride: 프레임 간의 간격
-duration: 모든 프레임의 균일 재생 시간
+- **void** AddAnimSequenceRev**(const sf::IntRect& rect, int stride, double duration, int count);**  
+시퀀스 프레임을 일정한 간격(stride)만큼 역순으로 기존 시퀀스에 추가합니다.  
+rect: 불러올 프레임의 크기  
+stride: 프레임 간의 간격  
+duration: 모든 프레임의 균일 재생 시간  
 count: 불러올 프레임 개수
-- **void** Update**(float dt);**
+- **void** Update**(float dt);**  
 매 프레임마다 이전 프레임에 대한 DeltaTime으로 애니메이션을 갱신합니다.
-- **void** Reset**();**
-재생 프레임을 첫 프레임으로 변경합니다.
-위치 데이터와 같은 메타 데이터는 변경되지 않습니다.
-- **void** Draw**(sf::RenderWindow& window);**
+- **void** Reset**();**  
+재생 프레임을 첫 프레임으로 변경합니다.  
+위치 데이터와 같은 메타 데이터는 변경되지 않습니다.  
+- **void** Draw**(sf::RenderWindow& window);**  
 애니메이션을 그립니다.
 
 [Anim.h](https://prod-files-secure.s3.us-west-2.amazonaws.com/998baec5-4c1f-4a0b-8c50-f1ec1a303577/1ed3f46c-d753-4a87-89f7-d4daeabe2f1e/Anim.h)
