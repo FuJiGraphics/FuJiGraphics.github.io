@@ -14,9 +14,9 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Jin의 개인 노트 # the main title
+title: 한 줄씩 쌓아가는 코드와 삶 # the main title
 
-tagline: Software Engineer # it will display as the subtitle
+tagline: Jr.Software Engineer # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
 
@@ -87,7 +87,7 @@ pageviews:
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #
-theme_mode: # [light | dark]
+theme_mode: light
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
