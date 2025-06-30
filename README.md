@@ -1,0 +1,2 @@
+# FuJiGraphics.github.io
+blog
