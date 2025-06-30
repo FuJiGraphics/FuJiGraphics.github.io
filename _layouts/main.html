@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+{% include head.html %}
+
+<body>
+{% assign current = page.url | downcase | split: '/' %}
+
+{% include nav.html %}
+{% include side_bar_left.html %}
+{% include side_bar_right.html %}
+
+{% if page.home == true %}
+{% include main-banner.html %}
+{% endif %}
+
+{% if page.url == '/about/' %}
+{% include about-banner.html %}
+{% endif %}
+
+{% if page.post-header == true %}
+{% include post-header.html %}
+{% endif %}
+
+{% if page.project-header == true %}
+{% include project-header.html %}
+{% endif %}
+
+<main>
+  {{ content }}
+</main>
+
+{% include footer.html %}
+
+</body>
+</html>

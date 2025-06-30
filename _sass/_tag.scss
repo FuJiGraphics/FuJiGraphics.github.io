@@ -1,0 +1,59 @@
+.tag-list {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, .07);
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.post-list-tags {
+  margin-top: 20px;
+}
+
+.tag {
+  margin-right: 10px;
+  color: white;
+  font-size: 14px;
+  cursor:pointer;
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: $grey-5;
+  transition: 0.2s;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: $primary;
+  }
+
+  &.selected {
+    color: white;
+    background-color: $primary-dark;
+  }
+
+  @media (max-width: $break-small) {
+    font-size: 13px;
+    padding: 2px 7px;
+    margin-right: 5px;
+  }
+}
+
+.post-tags {
+  margin-top: 60px;
+
+  a {
+    background-image: none;
+  }
+
+  .tag {
+    color: $primary;
+    margin: 0 2px;
+    padding: 5px;
+    text-decoration: underline;
+  }
+
+  .tag:hover {
+    opacity: 0.5;
+  }
+}

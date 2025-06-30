@@ -1,0 +1,34 @@
+---
+# Use a comment to ensure Jekyll reads the file to be transformed into CSS later
+# only main files contain this front matter, not partials.
+---
+*{word-break: keep-all;}
+body {
+  -ms-overflow-style: none !important; /* IE and Edge */
+    scrollbar-width: none !important; /* Firefox */
+}
+body::-webkit-scrollbar {
+    display: none !important; /* Chrome, Safari, Opera*/
+}
+
+@import 'variables';
+@import 'base';
+@import 'layout';
+@import 'nav';
+@import 'home';
+@import 'about';
+@import 'banner';
+@import 'life';
+
+@import 'code';
+@import 'post';
+@import 'syntax';
+@import 'pagination';
+@import 'catalogue';
+@import 'section';
+@import 'tag';
+@import 'member';
+@import 'paginator';
+@import 'post-list';
+@import 'sidebar';
+@import 'projects';

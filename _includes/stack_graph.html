@@ -1,0 +1,54 @@
+<!-- Step 1) Load D3.js -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<!-- Step 2) Load billboard.js with style -->
+<script src="./src/billboard.js"></script>
+
+<!-- Load with base style -->
+<link rel="stylesheet" href="./src/billboard.css">
+
+<!-- Or load different theme style -->
+<link rel="stylesheet" href="./src/insight.min.css">
+
+<div class="aboutme_stack_graph" id="aboutme_stack_graph">
+
+</div>
+
+<script language="javascript">
+  var chart = bb.generate({
+    data: {
+      x: "Ability",
+      columns: [
+      	["Ability", "C#", "유니티", "알고리즘", "Git", "웹", "자바스크립트"],
+      	["숙련도", 85, 85, 60, 70, 80, 60],],
+      type: "radar", // for ESM specify as: radar()
+      labels: false
+    },
+    legend: {
+      show: false
+    },
+    color:{
+      pattern: [ "#9166fc" ]
+    },
+    radar: {
+      level: {
+        depth: 2,
+        show: true,
+      },
+      axis: {
+        max: 100,
+        text: {
+          show: true
+        }
+      },
+      level: {
+        text: {
+          show: false
+        }
+      }
+    },
+    bindto: "#aboutme_stack_graph"
+  });
+
+  
+</script>

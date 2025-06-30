@@ -1,0 +1,60 @@
+---
+layout: main
+---
+
+<div class="post">
+    <div class="post-info">
+        <div class="post-type-tag">
+            {% if page.draft == true %}
+            <div class="catalogue-tag">
+                Coming Soon
+            </div>
+            {% endif %}
+            <div class="post-type">
+                {{ page.category }}
+            </div>
+        </div>
+        <h1 class="post-title">
+            {{ page.title }}
+        </h1>
+        <h2 class="post-subtitle">
+            {{ page.subtitle }}
+        </h2>
+        <h2 class="post-date">
+            {{ page.date | date : '%Y.%m.%d' }}
+        </h2>
+    </div>
+
+    <div class="post-content">
+
+        {% if page.draft == true %}
+            <div class="catalogue-draft-message">
+                <h1>
+                    &#x270D; Coming Soon!
+                </h1>
+                현재 열심히 글을 쓰고 있어요. 조금만 기다려주세요!
+            </div>
+        {% else %}
+    
+          {{ content }}
+          <br><br>
+        {% endif %}
+    </div>
+
+    {% if page.draft == false %}
+    <div class="post-footer-div">
+        {% include post-footer.html %}
+    
+        {% if page.layout == 'post' %}
+            <script src="https://utteranc.es/client.js"
+                    repo="KimYC1223/KimYC1223.github.io"
+                    theme="github-light"
+                    issue-term="pathname"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        {% endif %}
+    </div>
+    {% endif %}
+
+</div>

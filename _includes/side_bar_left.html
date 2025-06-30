@@ -1,0 +1,74 @@
+{% assign writer = site.data.members | where: 'id', KimYC1223 | first %}
+<div class="side_bar_left">
+  <div class='side_bar_thumbnail' >
+
+    <img class='side_bar_profileImage' id="side_bar_MyThumbnail" src='https://avatars.githubusercontent.com/u/40852277'/>
+      <script>
+        thumbnail = document.getElementById('side_bar_MyThumbnail')
+        thumbnail.addEventListener('click', () => {
+          location.href = "https://github.com/KimYC1223"
+        })
+      </script>
+      <div class='side_bar_emoji'>
+        <span>{{writer.emoji}}</span>
+      </div>
+      <div class="side_bar_nickname">
+        KimYC1223
+      </div>
+      <div class="side_bar_name">
+        김영찬
+      </div>
+      <div class="side_bar_work_en" style="margin-bottom: 10px;">
+        DEVSISTERS<br>STUDIO KINGDOM
+      </div>
+      <div class="side_bar_work_kr">
+        데브시스터즈<br />스튜디오 킹덤
+      </div>
+      <div class="side_bar_hitcount">
+        <img alt="Hits" src="https://hits.sh/kimyc1223.github.io.svg?view=today-total&style=plastic&label=%EB%B0%A9%EB%AC%B8%EC%9E%90%20(%EC%9D%BC%EC%9D%BC%2F%EC%B4%9D%EA%B3%84)&extraCount=8563&color=9166fc"/>
+      </div>
+      <div class="side_bar_button" id="side_bar_enmail">
+        <i class="far fa-envelope"></i> <span>kau_esc@naver.com</span>
+      </div>
+      <div class="side_bar_button" id="side_bar_github">
+        <i class="fab fa-github-alt"></i> <span>GitHub Profile</span>
+      </div>
+      <div class="side_bar_button" id="side_bar_assetstore">
+        <i class="fa-brands fa-unity"></i><span>Unity publisher profile</span>
+      </div>
+      <div class="side_bar_button" id="side_bar_steam">
+        <i class="fab fa-steam-symbol"></i> <span>Steam Profile</span>
+      </div>
+      <div class="side_bar_button" id="side_bar_facebook">
+        <i class="fab fa-facebook-square"></i> <span>Facebook</span>
+      </div>
+
+      <script>
+        side_bar_enmail_1 = document.getElementById('side_bar_enmail')
+        side_bar_enmail_1.addEventListener('click', () => {
+          location.href = "mailto:kau_esc@naver.com"
+        })
+
+        side_bar_github = document.getElementById('side_bar_github')
+        side_bar_github.addEventListener('click', () => {
+          location.href = "https://github.com/KimYC1223"
+        })
+
+        side_bar_steam = document.getElementById('side_bar_steam')
+        side_bar_steam.addEventListener('click', () => {
+          location.href = "https://steamcommunity.com/id/kimyc1223?l=korean"
+        })
+
+        side_bar_facebook = document.getElementById('side_bar_facebook')
+        side_bar_facebook.addEventListener('click', () => {
+          location.href = "https://www.facebook.com/profile.php?id=100000498178589"
+        })
+
+        side_bar_assetstore = document.getElementById('side_bar_assetstore')
+        side_bar_assetstore.addEventListener('click', () => {
+          location.href = "https://assetstore.unity.com/publishers/73611"
+        })
+
+      </script>
+  </div>
+</div>

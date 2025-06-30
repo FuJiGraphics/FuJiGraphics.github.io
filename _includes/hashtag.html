@@ -1,0 +1,86 @@
+<script>
+    let SelectedTag = "";
+
+    function filterByTagName(tagName) {
+        $('.hidden').removeClass('hidden');
+        var check_count = 0;
+        $('.catalogue2-item').each(function(index, elem) {
+            if (!elem.hasAttribute("data-" + tagName)) {
+                $(elem).addClass('hidden');
+            } else {
+              check_count ++;
+            }
+        });
+        $(".tag").removeClass('selected');
+        $(".tag[data-tag=" + tagName + "]").addClass('selected');
+        $(".tag_a[data-tag=" + tagName + "]").attr("href", "/tech")
+        if(check_count == 0)  { $("#emptyDiv").removeClass('hiddenEmptyDiv');}
+        else { $("#emptyDiv").addClass('hiddenEmptyDiv');}
+    }
+
+    function updateQueryString(tagName) {
+        window.location = '/tags/?tag=' + tagName;
+    }
+
+    function searchParam(key) {
+      return new URLSearchParams(location.search).get(key);
+    };
+
+    function makeTagList(){
+        let tagStrs = getAllTagList();
+        for(let i = 0; i < tagStrs.length; i++){
+            var v = tagStrs[i];
+            $("#tag-list")[0].innerHTML += '<span class="tag" data-tag="' + v +'">' + v + '</span>';
+        }
+        $('#tag-list span').appendTo('#tag-list');
+    }
+
+    function getAllTagList() {
+        let tagArray = [];
+        {% for item in site.data.tags %}
+            tagArray.push('{{item}}');
+        {% endfor %}
+        return tagArray;
+    }
+
+    function linkTag(){
+        const queryTag = window.location.search.substring(5);
+        const tags = getAllTagList();
+        var flag = false;
+
+        for(let i = 0; i < tags.length; i++){
+            if(queryTag === tags[i]){
+                flag = true;
+            }
+        }
+        if (queryTag && flag) {
+            filterByTagName(queryTag);
+        }
+    }
+
+    function tagFilter(){
+        makeTagList();
+        linkTag();
+        $("[data-tag]").click(function(e) {
+            const currentTag = e.target.dataset.tag;
+            if(SelectedTag != currentTag) {
+                updateQueryString(currentTag);
+            } else {
+                window.location = '/tech'
+            }
+        })
+    }
+
+    $(document).ready(function() {
+        tagFilter();
+        var str = searchParam('tag');
+        SelectedTag = str;
+        if(str == null || str == '') return
+        const currentTag = str;
+        filterByTagName(currentTag);
+    });
+</script>
+
+<div class="tag-container">
+  <div id="tag-list" class="tag-list"></div>
+</div>

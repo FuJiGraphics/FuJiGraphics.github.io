@@ -1,0 +1,7 @@
+<div class="post-list-tags">
+    {% if page.tags %}
+        {% for tag in page.tags %}
+            <a class="tag_a" data-tag="{{ tag }}" href="/tags/?tag={{ tag }}"><span class="tag" data-tag="{{ tag }}">{{ tag }}</span></a>
+        {% endfor %}
+    {% endif %}
+</div>

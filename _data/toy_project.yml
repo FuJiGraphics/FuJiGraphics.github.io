@@ -1,0 +1,38 @@
+- name : 심플 토익 단어장
+  date : 2021.4
+  url : https://github.com/KimYC1223/KYC_VOCA
+  desc : 2021 토익 대비를 위한 나만의 단어 테스트 서비스.
+  type : Git
+  icon : <i class="fas fa-language"></i>
+  badge :
+    - Web
+    - Javascript
+
+- name : DE1_SOC로 만든 스마트 콘센트
+  date : 2018.12
+  url : https://github.com/KimYC1223/KAU_HW_2018
+  desc : 하드웨어 설계때 텀 프로젝트로 만든 스마트 콘센트
+  type : Git
+  icon : <i class="fas fa-plug"></i>
+  badge :
+    - Verilog HDL
+    - Hardware Design
+
+- name : 취미로 만든 게임기
+  date : 2017.4
+  url : https://drive.google.com/file/d/1wTHgphzNwsr7QpFm_QRIHZFTU7n4In6l/view?usp=sharing
+  desc : 군대에서 만든 종이박스와 여러가지 전자 부품들로 테트리스 게임기 만들기
+  type : Video
+  icon : <i class="fas fa-gamepad"></i>
+  badge :
+    - Hardware
+    - Arduino
+
+- name : 취미로 만든 보조배터리
+  date : 2015.5
+  url : https://drive.google.com/file/d/1VbnKnhWDAV5OXTA4Ax0tsuJDPaGalqr5/view?usp=sharing
+  desc : 구형 분리식 스마트폰 배터리와 구형 충전기를 분해하여 보조 배터리 만들기
+  type : Video
+  icon : <i class="fas fa-car-battery"></i>
+  badge :
+    - Hardware

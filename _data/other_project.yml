@@ -1,0 +1,119 @@
+- name : Fluid Track
+  state : public
+  img : ./img/other_p_1.png
+  short-desc : 주간빈뇨증후군 환아를 위한 셀프트레킹 솔루션 개발
+  language :
+    - Javascript
+    - 'C#'
+    - SQL
+  platform :
+    - Android
+    - Web
+  git-name : "Git Organization"
+  git-url : https://github.com/FluidTrack
+  long-desc : 주간빈뇨증후군(DUFS)를 치료하기 위한 셀프 트래킹 솔루션 메인 개발자로서, 셀프트래킹 안드로이드 어플리케이션 개발 및 릴리즈, 블루투스 통신 모듈 구현, 트래킹 로그 REST API 서버, 연구용 웹 대시보드, 의료진용 레포트 생성 서버의 구현을 총괄함. 해당 솔루션은 DC Lab과 세브란스 어린이병원이 주관하는 HCI 연구에 사용됨.
+  warning : ""
+  reference :
+    - name : 구글 앱
+      url : https://play.google.com/store/apps/details?id=com.DCLab.FluidTrack&hl=ko&gl=US
+      img : ./img/other_p_1_1.png
+    - name : web 대시보드
+      url : http://fluidtrack.site
+      img : ./img/other_p_1_5.png
+    - name : 석사 논문
+      url : https://drive.google.com/file/d/1U_WJHFoU46nUxZy0O1t4B2EqL5MqUXVd/view?usp=sharing
+      img : ./img/other_p_1_2.png
+    - name : Report Server
+      url : https://drive.google.com/file/d/18fdiSA4NMpEV-PHwQKS3WAYe6pBWDEA0/view?usp=sharing
+      img : ./img/other_p_1_4.png
+    - name : 데모
+      url : https://drive.google.com/file/d/10DuhQ3eYA_BcGnU-JPLOoHNN6p1i50SP/view
+      img : ./img/other_p_1_6.png
+    - name : 데모2
+      url : https://drive.google.com/file/d/1eNyf1TaeOZh_7pBR0POQtMfPt9h5aiU-/view?usp=sharing
+      img : ./img/other_p_1_7.png
+
+
+
+- name : 공공기관 광고현황 조회
+  state : public
+  img : ./img/other_p_2.png
+  short-desc : 공공기관의 광고 현황을 조회 할 수 있는 서비스 구현
+  language :
+    - Javascript
+    - SQL
+  platform :
+    - NodeJS
+    - Web
+  git-name : "Git repository"
+  git-url : https://github.com/KimYC1223/Public-Institutions-AD-Web
+  long-desc : 정부 18부처의 광고 집행 내역(2014 ~ 2021년도)을 누구나 쉽게 조회할 수 있는 웹 서비스를 구축함. 웹 서버와 데이터베이스를 구축하고, 사용자가 원하는 정보를 쉽게 얻을 수 있도록 billboard.js를 통해 그래프로 표현하였음.
+  warning : 본 프로젝트는 정치 성향과 무관함을 밝힙니다.
+  reference :
+    - name : 광고 현황 조회
+      url : http://www.kek9580.com/
+      img : ./img/other_p_2_1.png
+    - name : 기사 2
+      url : https://www.breaknews.com/837497
+      img : ./img/other_p_2_3.png
+    - name : 기사 1
+      url : http://www.mediatoday.co.kr/news/articleView.html?idxno=215810
+      img : ./img/other_p_2_2.png
+
+- name : HYPER SHIELD
+  state : public
+  img : ./img/other_p_5.png
+  short-desc : 임베디드 기반의 프라이빗 블록체인을 이용한 출입 관리 시스템
+  language :
+    - Javascript
+    - Go
+  platform :
+    - Hyperledger
+    - Ubuntu Mate
+    - docker
+    - AngularJS
+  git-name : "Git repository"
+  git-url : https://github.com/KimYC1223/Hyperledger_PCtoRASP
+  long-desc : 프라이빗 블록체인 기반의 출입 관제 시스템을 구축한 프로젝트로서, 라즈베리파이와 같은 임베디드 환경(ARM64)에서 Hyper ledge fabric을 빌드하고, 이를 백엔드 서버로하여, 트랜잭션을 관리하고 모니터링 할 수 있는 프론트엔드 서비스를 구축하였다.
+  warning : ""
+  reference :
+    - name : 학사 논문
+      url : https://drive.google.com/file/d/16pBzDMKIkrF0tZb0258sKV6y6qoX63uc/view?usp=sharing
+      img : ./img/other_p_5_3.png
+    - name : SRC GIT
+      url : https://github.com/KimYC1223/Hyperprov
+      img : ./img/other_p_5_1.png
+    - name : 데모 영상
+      url : https://drive.google.com/file/d/10XWi_MY-xwsmfeQ32lJIfZx3ds5KvsJH/view?usp=sharing
+      img : ./img/other_p_5_2.png
+    - name : 해커톤
+      url : https://drive.google.com/file/d/1reyDgnocpDbPcX09SZnVZ20sXlhYAT74/view?usp=sharing
+      img : ./img/other_p_5_4.png
+
+- name : 뉴로모픽 얼굴인식 모듈
+  state : private
+  img : ./img/other_p_4.png
+  short-desc : 뉴로모픽 칩을 이용한 KNN-기반 얼굴 인식 모듈 개발
+  language :
+    - C
+  platform :
+    - Nueromorphic
+    - RaspberryPI
+  git-name : ""
+  git-url : ""
+  long-desc : 전통적인 얼굴 검출 알고리즘인 HAAR-Cascade 알고리즘을 서울과학기술대학교에서 제작한 뉴로모픽 칩을 이용하여 가속함. 기존 알고리즘의 Threshold 비교 과정을 KNN 매칭으로 구현하여 처리하였으며, 기존 방법 대비 계산 속도는 27.81%, 프로그램의 CPU 점유율은 34.19% 향상시킴.
+  warning : ""
+
+- name : 저전력 PCB 기판 AOI 검사기
+  state : private
+  img : ./img/other_p_3.png
+  short-desc : 저전력 라즈베리파이 환경에서 동작하는 PCB 기판 검사기 구현
+  language :
+    - Python
+  platform :
+    - IntelCurie
+    - RaspberryPI
+  git-name : ""
+  git-url : ""
+  long-desc : 기존 PCB 기판의 SMT 검사중 하나인 AOI 검사(오삽, 미삽, 미납, 소납, 과납, 마킹, 쇼트, 크랙, 역삽 등)과정 소요 시간을 기판당 평균 0.7초에서 0.5초로 단축함. 라즈베리파이 3 B+ 하드웨어에 병렬 연산 가속기인 Intel Curie칩을 확장하고 SPI로 통신하여 전체적인 연산 속도를 향상시킴.
+  warning : ""

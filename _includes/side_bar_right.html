@@ -1,0 +1,77 @@
+<div class="side_bar_right">
+  {% assign sorted = site.posts | where: 'type', 'tech' %}
+  <div class="side_bar_title" id="side_bar_home"><i class="fas fa-code"></i> 영찬의 개발 블로그</div>
+  <div class="side_bar_category_div">
+    <div class="side_bar_super_list" id="side_bar_profile">
+      프로필
+    </div>
+    <div class="side_bar_super_list" id="side_bar_tech">
+      테크노트
+      <div class="side_bar_post_count2">
+        ( {{ sorted.size }} )
+      </div>
+    </div>
+
+    {% for item in site.data.tags %}
+    <div class="side_bar_sub_list" id="side_bar_{{item}}">
+      <span>{{item}}</span>
+      <div class="side_bar_post_count">
+        {% assign post_a1 = sorted | where: 'tags', item %}
+        ...  {{ post_a1.size }}
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="side_bar_super_list" id="side_bar_life">
+      소소한 이야기
+    </div>
+    <!--<div class="side_bar_super_list" id="side_bar_project">
+      프로젝트
+    </div>-->
+    <div class="side_bar_super_list" id="side_bar_BM">
+      영찬의 빌드머신
+    </div>
+  </div>
+</div>
+
+<script>
+  side_bar_home = document.getElementById('side_bar_home')
+  side_bar_home.addEventListener('click', () => {
+    location.href = "/"
+  })
+
+  side_bar_profile = document.getElementById('side_bar_profile')
+  side_bar_profile.addEventListener('click', () => {
+    location.href = "/profile"
+  })
+
+  side_bar_tech = document.getElementById('side_bar_tech')
+  side_bar_tech.addEventListener('click', () => {
+    location.href = "/tech"
+  })
+
+  side_bar_life = document.getElementById('side_bar_life')
+  side_bar_life.addEventListener('click', () => {
+    location.href = "/life"
+  })
+
+  /*
+  side_bar_project = document.getElementById('side_bar_project')
+  side_bar_project.addEventListener('click', () => {
+    location.href = "/project"
+  })
+  */
+
+  side_bar_BM = document.getElementById('side_bar_BM')
+  side_bar_BM.addEventListener('click', () => {
+    location.href = "http://kyc-buildmachine.link/"
+  })
+
+  {% for item in site.data.tags %}
+    side_bar_{{item}} = document.getElementById('side_bar_{{item}}')
+    side_bar_{{item}}.addEventListener('click', () => {
+      location.href = "/tags/?tag={{item}}"
+    })
+  {% endfor %}
+
+</script>

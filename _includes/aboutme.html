@@ -1,0 +1,371 @@
+
+
+<div class="aboutme">
+  <div class = "aboutme_picture">
+    <img src="https://avatars.githubusercontent.com/u/40852277">
+  </div>
+  <div class="aboutme_title">
+    <span class="aboutme_title_ko">김영찬</span> <span class="aboutme_title_en">Kim Young Chan</span>
+    <span class="aboutme_subtitle">Unity 클라이언트 & SDK 개발자</span>
+  </div >
+
+  <div class="aboutme_section">
+    <div class="aboutme_greeting">
+      안녕하세요, 어제보다 더 성장할 나를 위해 노력하는 김영찬 입니다.
+      <div class="aboutme_greeting_subdiv">
+        <div class="aboutme_greeting_subtitle">SNS</div>
+        <div class="text_badge" id="aboutme_badge_github">
+          <span class="text_badge_head"><i class="fab fa-github-alt"></i></span>
+          <span class = "text_badge_content">github</span>
+        </div>
+        <div class="text_badge" id="aboutme_badge_facebook">
+          <span class="text_badge_head"><i class="fab fa-facebook-f"></i></span>
+          <span class = "text_badge_content">facebook</span>
+        </div>
+        <div class="text_badge" id="aboutme_badge_linkedin">
+          <span class="text_badge_head"><i class="fab fa-linkedin-in"></i></span>
+          <span class = "text_badge_content">linked-in</span>
+        </div>
+        <div class="text_badge" id="aboutme_badge_solvedac">
+          <span class="text_badge_head"><i class="fas fa-code"></i></span>
+          <span class = "text_badge_content">solved.ac</span>
+        </div>
+        <div class="text_badge" id="aboutme_badge_steam">
+          <span class="text_badge_head"><i class="fab fa-steam-symbol"></i></span>
+          <span class = "text_badge_content">steam</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="aboutme_bookmark_div" id="aboutme_bookmark_assetstore">
+      <div class="aboutme_bookmark_thumbnail">
+        <img src="./img/AssetStoreProfile.png">
+      </div>
+      <div class="aboutme_bookmark_description">
+        <span class="aboutme_bookmark_title">Unity Asset Store Publisher Profile</span>
+        <span class="aboutme_bookmark_address">https://assetstore.unity.com/publishers/73611</span>
+        <span class="aboutme_bookmark_subtitle">간단하지만 코딩하기 번거로운 패키지를 개발하고 업로드합니다.</span>
+      </div>
+    </div>
+
+    
+
+    <script>
+      aboutme_badge_github = document.getElementById('aboutme_badge_github')
+      aboutme_badge_github.addEventListener('click', () => {
+        location.href = "https://github.com/KimYC1223"
+      })
+
+      aboutme_badge_facebook = document.getElementById('aboutme_badge_facebook')
+      aboutme_badge_facebook.addEventListener('click', () => {
+        location.href = "https://www.facebook.com/profile.php?id=100000498178589"
+      })
+
+      aboutme_badge_linkedin = document.getElementById('aboutme_badge_linkedin')
+      aboutme_badge_linkedin.addEventListener('click', () => {
+        location.href = "https://www.linkedin.com/in/%EC%98%81%EC%B0%AC-%EA%B9%80-2b9aa9209/"
+      })
+
+      aboutme_badge_solvedac = document.getElementById('aboutme_badge_solvedac')
+      aboutme_badge_solvedac.addEventListener('click', () => {
+        location.href = "https://solved.ac/profile/kimyc1223"
+      })
+
+      aboutme_badge_steam = document.getElementById('aboutme_badge_steam')
+      aboutme_badge_steam.addEventListener('click', () => {
+        location.href = "https://steamcommunity.com/id/kimyc1223?l=korean"
+      })
+
+      aboutme_bookmark_assetstore = document.getElementById('aboutme_bookmark_assetstore')
+      aboutme_bookmark_assetstore.addEventListener('click', () => {
+        location.href = "https://assetstore.unity.com/publishers/73611"
+      })
+    </script>
+  </div>
+
+  <div class="aboutme_section">
+    <div class = "aboutme_introduce_section">
+      <div class="aboutme_section_title">자기 소개</div>
+      <ul>
+        <li>
+          <table><tr><td><i class="fas fa-chevron-right"></i></td>
+          <td><span>컴퓨터 공학을 전공하고 Unity 클라이언트 및 SDK개발을 하고 있는 개발자입니다.</span></td></tr></table>
+        </li>
+        <li>
+          <table><tr><td><i class="fas fa-chevron-right"></i></td>
+          <td><span>새로운 걸 배우는 것을 좋아하고, 직접 부딪히고 다뤄보며 공부합니다.</span></td></tr></table>
+        </li>
+        <li>
+          <table><tr><td><i class="fas fa-chevron-right"></i></td>
+          <td><span>다양한 프로젝트와 실무 경험을 통한 문제 해결 능력을 가지고 있습니다.</span></td></tr></table>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="aboutme_section">
+    <div class = "aboutme_edu">
+      <div class="aboutme_section_title">학력 및 경력 사항</div>
+        <div class="aboutme_greeting_subdiv">
+          <div class="aboutme_edu_subtitle">학력 사항</div>
+          <table class="aboutme_edu_table">
+            <tr class="aboutme_edu_table_head"> <td>기간</td> <td>학교</td> <td>전공</td> <td>학위</td> <td class="aboutme_edu_table_extra">비고</td>
+            </tr>
+            {% assign education = site.data.edu %}
+            {% for edu in education %}
+            <tr> <td>{{ edu.period }}</td> <td>{{ edu.school }}</td> <td>{{ edu.major }}</td> <td>{{ edu.degree }}</td>
+                 <td class="aboutme_edu_table_extra">{{ edu.remark }}</td> </tr>
+            {% endfor %}
+          </table>
+
+          <div class="aboutme_edu_subtitle">경력 사항</div>
+          <table class="aboutme_edu_table">
+            <tr class="aboutme_edu_table_head"> <td>기간</td> <td>기관 명</td> <td>직책</td> </tr>
+            {% assign careers = site.data.career %}
+            {% for career in careers %}
+            <tr> <td>{{ career.period }}</td> <td>{{ career.com }}</td> <td>{{ career.position }}</td> </tr>
+            {% endfor %}
+          </table>
+      </div>
+    </div>
+  </div>
+
+  <Br>
+
+  <div class="aboutme_section">
+    <div class = "aboutme_edu">
+      <div class="aboutme_section_title">기술 스택</div>
+
+      {% include stack_graph.html %}
+
+      {% assign stacks = site.data.stack%}
+      {% for stack in stacks %}
+      <div class="aboutme_stack_cards">
+        <img src="{{ stack.img }}">
+        <span class="aboutme_badge_name">{{ stack.name }}</span>
+        {{ stack.content }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <Br>
+
+  <div class="aboutme_section">
+    <div class = "aboutme_recent_section">
+      <div class="aboutme_section_title">최근 프로젝트</div>
+        {%- include projects.html %}
+      </div>
+    </div>
+  </div>
+
+  <Br><Br>
+
+  <div class="aboutme_section">
+    <div class = "aboutme_project_section">
+      <div class="aboutme_section_title">메인 프로젝트</div>
+      <div class="aboutme_project_center_div">
+      {% assign main_p = site.data.main_project %}
+      {% for p in main_p %}
+      
+      <div class = "aboutme_project_card">
+        <div class="aboutme_project_card_main">
+          <div class="aboutme_project_card_img">
+            <div class="aboutme_project_card_img_dark"></div>
+            <div class="aboutme_proejct_card_real_img" style="background:url({{ p.img }});background-position: center center; background-size: cover;"></div>
+          </div>
+          <div class="aboutme_project_card_text">
+            <span class="aboutme_project_card_title">{{ p.name }}</span>
+            <span class="aboutme_project_card_desc">{{ p.desc }}</span>
+            <table style="width:95%;margin:10px 0px;">
+            {% for t in p.task %}
+            <tr><td class="aboutme_project_card_task" style="width:10px; text-align:center;">◾</td><td style="padding-left:5px;">
+            <span class="aboutme_project_card_task">{{ t }}</span></td></tr>
+            {% endfor %}
+            </table>
+          </div>
+        </div>
+        <div class="aboutme_project_card_keyword_wrap">
+        {% for k in p.keyword %}
+        <span class="aboutme_project_card_keyword">{{ k }}</span>
+        {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="aboutme_section">
+    <div class = "aboutme_thesis_section">
+      <div class="aboutme_section_title">국내 및 해외 논문</div>
+      <table class="aboutme_thesis_table">
+        <tr class="aboutme_thesis_table_head"> <td>제목</td> <td>기관명</td> <td>발행일</td> <td>분류</td> </tr>
+        {% assign thesis = site.data.thesis %}
+        {% for paper in thesis %}
+        <tr class="aboutme_thesis_table_tr">
+          {% if paper.url != "" %}
+          <td><a href="{{ paper.url }}">{{ paper.name }}</a></td>
+          {% else %} <td>{{ paper.name }}</td> {% endif %}
+          <td>{{ paper.org }}</td> <td>{{ paper.date }}</td> <td>{{ paper.type }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+
+  <div class="aboutme_section">
+    <div class = "aboutme_extra_section">
+      <div class="aboutme_section_title">다른 프로젝트</div>
+      {% assign projects = site.data.other_project %}
+      {% for p in projects %}
+      <div class="aboutme_other_project_div">
+        <div class="aboutme_other_project_img_td">
+          <img src= "{{ p.img }}" class="aboutme_other_project_img">
+        </div>
+        <div class="aboutme_other_project_text_td">
+          <span class="aboutme_other_project_{{ p.state }}">{{ p.state }}</span>
+          <span class="aboutme_other_project_title">{{ p.name }}</span>
+          <span class="aboutme_other_project_short_desc">{{ p.short-desc }}</span>
+          <div class="aboutme_other_project_language_platform_div">
+          {% for l in p.language%}
+            <span class="aboutme_other_project_language">{{ l }}</span>
+          {% endfor %} {% for pl in p.platform%}
+            <span class="aboutme_other_project_platform">{{ pl }}</span>
+          {% endfor %} </div>
+
+          {% if p.git-url != "" %}
+          <a href="{{ p.git-url }}" class= "aboutme_other_project_git_a">
+            <div class="text_badge text_badge2">
+              <span class="text_badge_head"><i class="fab fa-github-alt"></i></span>
+              <span class = "text_badge_content text_badge_content2">{{ p.git-name }}</span>
+            </div>
+          </a>
+          {% endif %}
+
+          <span class="aboutme_other_project_desc">{{ p.long-desc }}</span>
+          {% if p.warning != "" %}
+          <span class="aboutme_other_project_warning">{{ p.warning }}</span>
+          {% endif%}
+
+          <div class="aboutme_other_project_ref_wrap_div">{% for ref in p.reference %}
+          <a href="{{ref.url}}"><div class="aboutme_other_project_ref_div">
+            <img src="{{ref.img}}">
+          </div></a>
+          {% endfor %}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+<!--
+  <div class="aboutme_section">
+    <div class = "aboutme_toy_section">
+      <div class="aboutme_section_title">토이 프로젝트</div>
+      작성중
+    </div>
+  </div>
+-->
+  <div class="aboutme_section">
+    <div class = "aboutme_extra_section">
+      <div class="aboutme_section_title">대외 활동</div>
+      <div class="aboutme_extra_card">
+        <table>
+          <tr>
+            <td class="aboutme_extra_card_img_td">
+              <a href="https://www.facebook.com/permalink.php?story_fbid=885174618175802&id=100000498178589"><img src="./img/ESC.jpg" class="aboutme_extra_card_img"></a>
+            </td>
+            <td class="aboutme_extra_card_img_td2">
+              <span class="aboutme_extra_card_name">E.S.C.</span>
+              <span class="aboutme_extra_card_sub">전자회로연구회</span>
+              <span class="aboutme_extra_card_role">35기 회장</span>
+              <span class="aboutme_extra_card_period">2013.03 - 2020.02</span>
+              <span class="aboutme_extra_card_desc">교내 중앙 학술동아리 전자회로 연구회 (Electronic-circuit Study Circle) 35기수 운영</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="aboutme_extra_card">
+        <table>
+          <tr>
+            <td class="aboutme_extra_card_img_td">
+              <a href="https://www.facebook.com/permalink.php?story_fbid=2205752936117957&id=100000498178589"><img src="./img/Realizer.jpg"></a>
+            </td>
+            <td class="aboutme_extra_card_img_td2">
+              <span class="aboutme_extra_card_name">Realizer</span>
+              <span class="aboutme_extra_card_sub">컨텐츠 제작 동호회</span>
+              <span class="aboutme_extra_card_role">테크니션</span>
+              <span class="aboutme_extra_card_period">2018.01 - 2018.06</span>
+              <span class="aboutme_extra_card_desc">"추리게임 : 폴리스라인 안으로"의 기술 소품 및 백그라운드 서버담당</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="aboutme_extra_card">
+        <table>
+          <tr>
+            <td class="aboutme_extra_card_img_td">
+              <a href="https://cargold.notion.site/cargold/5c1b5c784cfd40bbba0f762fb2dcbee9"><img src="./img/CargoldMember.jpg"></a>
+            </td>
+            <td class="aboutme_extra_card_img_td2">
+              <span class="aboutme_extra_card_name">Cargold의 거실</span>
+              <span class="aboutme_extra_card_sub">게임 개발자 커뮤니티</span>
+              <span class="aboutme_extra_card_role">시즌 2 거실 멤버</span>
+              <span class="aboutme_extra_card_period">2023.11 - 진행중</span>
+              <span class="aboutme_extra_card_desc">카골드의 거실 Unity 개발자-프로그래밍 멤버 (시즌2 부터 참여 중)</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="aboutme_edu_subtitle">활동 기록</div>
+    {% assign activity = site.data.extra_activity %}
+    {% for a in activity %}
+    <a href="{{ a.url }}" target="blank"><div class="aboutme_activity_video">
+      <img src="{{ a.img }}" alt="" class="aboutme_activity_video_thumbnail">
+      <div class="aboutme_activity_video_black"></div>
+      <span class="aboutme_activity_video_name">{{ a.name }}</span>
+      <img src="./img/Play.png" alt="" class="aboutme_activity_video_play_button">
+    </div></a>
+    {% endfor %}
+  </div>
+
+  <div class="aboutme_section">
+    <div class="aboutme_greeting">
+      <div class="aboutme_section_title">연락처</div>
+      <div class="aboutme_greeting_subdiv">
+        <div class="text_badge" id="aboutme_badge_email1">
+          <span class="text_badge_head"><i class="far fa-envelope"></i></span>
+          <span class = "text_badge_content">kau_esc@naver.com</span>
+        </div>
+        <div class="text_badge" id="aboutme_badge_email2">
+          <span class="text_badge_head"><i class="far fa-envelope"></i></span>
+          <span class = "text_badge_content">kim.youngchan@yonsei.com</span>
+        </div>
+        <div class="text_badge" id="aboutme_telegram">
+          <span class="text_badge_head"><i class="fab fa-telegram-plane"></i></span>
+          <span class = "text_badge_content">kim_youngchan</span>
+        </div>
+      </div>
+      <script>
+        aboutme_badge_email1 = document.getElementById('aboutme_badge_email1')
+        aboutme_badge_email1.addEventListener('click', () => {
+          location.href = "mailto:kau_esc@naver.com"
+        })
+
+        aboutme_badge_email2 = document.getElementById('aboutme_badge_email2')
+        aboutme_badge_email2.addEventListener('click', () => {
+          location.href = "mailto:kim.youngchan@yonsei.ac.kr"
+        })
+
+        aboutme_telegram = document.getElementById('aboutme_telegram')
+        aboutme_telegram.addEventListener('click', () => {
+          location.href = "https://t.me/kim_youngchan"
+        })
+      </script>
+  </div>
+</div>

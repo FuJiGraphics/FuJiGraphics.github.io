@@ -1,0 +1,68 @@
+- name : 혼합 현실 협업 솔루션
+  index : 1
+  img : ./img/mp_01.png
+  url : /profile/
+  desc : Mixed Reality 기반 산업용 협업 지원 시스템 핵심 기술 개발
+  task :
+    - HoloLens용 사용자 인터페이스 직접 구현
+    - TCP/IP 핸들러, Rest Client 기능 직접 구현
+  keyword :
+    - Mixed Reality
+    - Holo Lens
+
+- name : 스마트 발전소 D.T.
+  index : 2
+  img : ./img/mp_02.png
+  url : /profile/
+  desc : 새만금 재생 에너지 발전소 관리를 위한 디지털 트윈 개발
+  task :
+    - WebGL 환경에서 Web-Unity간 상호작용 직접 구현
+    - 서버 기반의 Digital Twin 직접 구현
+  keyword :
+    - Digital Twin
+    - WegGL
+
+- name : Smart Deployment
+  index : 3
+  img : ./img/mp_03.png
+  url : /profile/
+  desc : CAD 데이터를 통한 강화학습 공사 시뮬레이터
+  task :
+    - 런타임 Programmable/Editable mesh 생성 기능 직접 구현
+  keyword :
+    - Simulator
+    - '3D Mesh'
+
+- name : Path Generator
+  index : 4
+  img : ./img/mp_04.gif
+  url : /profile/
+  desc : '3D공간을 등속력으로 움직 일 수 있는 라이브러리 구현'
+  task :
+    - Bezier Curve를 응용한 자연스러운 커브 및 불규칙한 움직임 구현
+    - 라이브러리 작업 및 도큐먼트 작성
+  keyword :
+    - Open Source
+
+- name : Flow Visualizer
+  index : 5
+  img : ./img/mp_05.gif
+  url : /profile/
+  desc : 유체나 물류의 흐름(양/속력/방향)을 한 눈에 파악할 수 있도록 만드는 라이브러리 구현
+  task :
+    - Unity Custom Editor 및 GUI Editor 작업
+    - 라이브러리 작업 및 도큐먼트 작성
+  keyword :
+    - Open Source
+    - Visualizer
+
+- name : BlackIce 시뮬레이터
+  index : 6
+  img : ./img/mp_06.png
+  url : /profile/
+  desc : 기상서버 데이터 기반 블랙 아이스 시뮬레이터 개발
+  task :
+    - 서버의 기상 로그를 받아오는 통신 기능 구현
+    - 시간대별로 3D 환경에서 표현하는 시뮬레이션 기능 구현
+  keyword :
+    - Simulator

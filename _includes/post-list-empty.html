@@ -1,0 +1,19 @@
+<li class="catalogue2-empty hiddenEmptyDiv" id="emptyDiv" >
+  <div class="catalogue2-center-div">
+    <div class="catalogue2-empty-emoji">
+      <i class="fas fa-exclamation-triangle"></i>
+    </div>
+    <div class="catalogue2-empty-desc">
+      게시글이 <span>존재하지</span> 않습니다.
+    </div>
+    <div class="catalogue2-button" id="catalogue2-button">
+      뒤로가기
+    </div>
+    <script>
+      button = document.getElementById('catalogue2-button')
+      button.addEventListener('click', () => {
+        window.history.back();
+      })
+    </script>
+  </div>
+</li>

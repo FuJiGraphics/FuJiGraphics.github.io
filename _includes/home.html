@@ -1,0 +1,137 @@
+<div class="loading-animation">
+  <section class="home">
+    <div class="section">
+      <span class="title"><span class="label-emoji">✍️</span>&nbsp;최근 게시물</span>
+      <div class="content">
+        <table class="catalogue">
+          <tr>
+            {% assign sorted = site.posts | sort: 'date' | reverse | where: 'type', 'tech' %}
+            {% for page in sorted limit:4 %}
+            {% include post-card.html %}
+            {% endfor %}
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="title"><span class="label-emoji">📚</span>&nbsp;메인 카테고리 게시물</span>
+      <div class="home_post_table">
+        <div class="home_post_table_category">
+          <div class="home_post_table_title">  증강 현실 <english>Mixed Reality</english></div>
+          <div class="home_post_table_contents">
+            <table>
+              <tr class="home_post_table_head">
+                <td>제목</td><td>작성일</td>
+              </tr>
+              {% assign sorted = site.posts | sort: 'date' | reverse | where: 'type', 'tech' | where: 'tags', 'MixedReality' %}
+              {% if sorted.size == 0 %}
+                  <td colspan="2" rowspan="4"><span class="home_post_table_no_post">글 없음</span></td>
+              {% else %}
+                {% for page in sorted limit:4 %}
+                <tr> <td><a href="{{ page.url | prepend: site.baseurl }}">{{page.title}}</a></td><td>{{page.date | date: "%Y-%m-%d"}}</td> </tr>
+                {% endfor %}
+              {% endif %}
+            </table>
+          </div>
+        </div>
+
+        <div class="home_post_table_category">
+          <div class="home_post_table_title">  유니티 <english>Unity</english></div>
+          <div class="home_post_table_contents">
+            <table>
+              <tr class="home_post_table_head">
+                <td>제목</td><td>작성일</td>
+              </tr>
+              {% assign sorted = site.posts | sort: 'date' | reverse | where: 'type', 'tech' | where: 'tags', 'Unity' %}
+              {% if sorted.size == 0 %}
+                  <td colspan="2" rowspan="4"><span class="home_post_table_no_post">글 없음</span></td>
+              {% else %}
+                {% for page in sorted limit:4 %}
+                <tr> <td><a href="{{ page.url | prepend: site.baseurl }}">{{page.title}}</a></td><td>{{page.date | date: "%Y-%m-%d"}}</td> </tr>
+                {% endfor %}
+              {% endif %}
+            </table>
+          </div>
+        </div>
+
+        <div class="home_post_table_category">
+          <div class="home_post_table_title">  웹 CSS / JS <english>Web</english></div>
+          <div class="home_post_table_contents">
+            <table>
+              <tr class="home_post_table_head">
+                <td>제목</td><td>작성일</td>
+              </tr>
+              {% assign sorted = site.posts | sort: 'date' | reverse | where: 'type', 'tech' | where: 'tags', 'Web' %}
+              {% if sorted.size == 0 %}
+                  <td colspan="2" rowspan="4"><span class="home_post_table_no_post">글 없음</span></td>
+              {% else %}
+                {% for page in sorted limit:4 %}
+                <tr> <td><a href="{{ page.url | prepend: site.baseurl }}">{{page.title}}</a></td><td>{{page.date | date: "%Y-%m-%d"}}</td> </tr>
+                {% endfor %}
+              {% endif %}
+            </table>
+          </div>
+        </div>
+
+        <div class="home_post_table_category">
+          <div class="home_post_table_title"> C# <english>C Sharp</english></div>
+          <div class="home_post_table_contents">
+            <table>
+              <tr class="home_post_table_head">
+                <td>제목</td><td>작성일</td>
+              </tr>
+              {% assign sorted = site.posts | sort: 'date' | reverse | where: 'type', 'tech' | where: 'tags', 'C_Sharp' %}
+              {% if sorted.size == 0 %}
+                  <td colspan="2" rowspan="4"><span class="home_post_table_no_post">글 없음</span></td>
+              {% else %}
+                {% for page in sorted limit:4 %}
+                <tr> <td><a href="{{ page.url | prepend: site.baseurl }}">{{page.title}}</a></td><td>{{page.date | date: "%Y-%m-%d"}}</td> </tr>
+                {% endfor %}
+              {% endif %}
+            </table>
+          </div>
+        </div>
+
+        <div class="home_post_table_category">
+          <div class="home_post_table_title">  토이 프로젝트 <english>ToyProject</english></div>
+          <div class="home_post_table_contents">
+            <table>
+              <tr class="home_post_table_head">
+                <td>제목</td><td>작성일</td>
+              </tr>
+              {% assign sorted = site.posts | sort: 'date' | reverse | where: 'type', 'tech' | where: 'tags', 'ToyProject' %}
+              {% if sorted.size == 0 %}
+                  <td colspan="2" rowspan="4"><span class="home_post_table_no_post">글 없음</span></td>
+              {% else %}
+              {% for page in sorted limit:4 %}
+              <tr> <td><a href="{{ page.url | prepend: site.baseurl }}">{{page.title}}</a></td><td>{{page.date | date: "%Y-%m-%d"}}</td> </tr>
+              {% endfor %}
+              {% endif %}
+            </table>
+          </div>
+        </div>
+
+        <div class="home_post_table_category">
+          <div class="home_post_table_title"> 취업 인터뷰 대비 <english>JobPreparation</english></div>
+          <div class="home_post_table_contents">
+            <table>
+              <tr class="home_post_table_head">
+                <td>제목</td><td>작성일</td>
+              </tr>
+              {% assign sorted = site.posts | sort: 'date' | reverse | where: 'type', 'tech' | where: 'tags', 'JobPreparation' %}
+              {% if sorted.size == 0 %}
+                  <td colspan="2" rowspan="4"><span class="home_post_table_no_post">글 없음</span></td>
+              {% else %}
+                {% for page in sorted limit:4 %}
+                <tr> <td><a href="{{ page.url | prepend: site.baseurl }}">{{page.title}}</a></td><td>{{page.date | date: "%Y-%m-%d"}}</td> </tr>
+                {% endfor %}
+              {% endif %}
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,860 @@
+/*=======================================================================================
+  최상단 파트
+=======================================================================================*/
+img {padding:0; margin: 0;}
+
+.aboutme{
+  font-family: 'Noto Sans KR';
+  font-weight: 400;
+}
+
+.aboutme_title {
+  width: 100%;
+  float: none;
+}
+
+.aboutme_title_ko {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.aboutme_title_en {
+  font-size: 30px;
+  margin-left: 30px;
+  color:$primary;
+  opacity: 0.5;
+
+  @media (max-width:800px) {
+    font-size: 18px;
+    display: block;
+    margin: 0;
+  }
+}
+
+.aboutme_picture {
+  float: left;
+  width: 120px;
+  height: 120px;
+  margin-top: 10px;
+  margin-right: 20px;
+
+  @media (max-width:800px) {
+    width: 165px;
+    height: 165px;
+    margin-right: 30px;
+  }
+
+  @media (min-width:$break-large) {
+    display: none;
+  }
+}
+
+.aboutme_subtitle {
+  display: block;
+  font-size: 24px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+
+  @media (max-width:$break-large) {
+    margin-bottom: 45px;
+  }
+
+  @media (max-width:$break-small) {
+    font-size: 20px;
+  }
+
+  @media (max-width:490px) {
+    margin-bottom: 40px;
+    font-size: 15px;
+  }
+}
+
+.aboutme_picture img {
+  margin-top: 0px;
+  border-radius: 8px;
+}
+
+.aboutme_section {
+  display: block;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.aboutme_section:last-child {
+  margin-bottom: 0;
+}
+
+.aboutme_bookmark_div {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid $grey-7;
+  overflow: hidden;
+  padding : 0;  
+  background-color: #FAFAFA;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.aboutme_bookmark_div:hover{
+  background-color: #E9E9E9;
+}
+
+.aboutme_bookmark_thumbnail {
+  width: 200px;
+  padding : 0;  
+  float: left;
+
+  @media (max-width: 720px) {
+    width: 250px;
+  }
+
+  @media (max-width: 600px) {
+    width: 30%;
+  }
+}
+
+.aboutme_bookmark_thumbnail img {
+  width: 100%;
+  padding : 0;  
+}
+
+.aboutme_bookmark_description {
+  width: calc(100% - 215px);
+  float:right;
+  padding-top:15px;
+  padding-right: 10px;
+
+  @media (max-width: 720px) {
+    width: calc(100% - 280px);
+    padding-top:8px;
+  }
+
+  @media (max-width: 600px) {
+    width: 65%;
+    padding-top:8px;
+  }
+}
+
+.aboutme_bookmark_title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom:5px;
+  color:$primary;
+  display: block;
+
+  @media (max-width: 720px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 18px;
+  }
+}
+
+.aboutme_bookmark_address {
+  font-size : 10px;
+  color:$grey-6;
+  margin-bottom:2px;
+  display: block;
+
+  @media (max-width: 720px) {
+    margin-bottom: 5px;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.aboutme_bookmark_subtitle {
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.aboutme_greeting {
+  color:$grey-8;
+  line-height: 25px;
+  padding-top: -10px;
+}
+
+.aboutme_greeting_subdiv {
+  margin-top: 20px;
+  margin-bottom: 5px;
+
+  @media (max-width: $break-small) {
+    margin-top: 10px;
+  }
+}
+
+.aboutme_greeting_subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color:$grey-0;
+}
+
+.aboutme_greeting_subtitle span {
+  margin-right: 10px;
+}
+
+
+
+
+
+/*=======================================================================================
+  자기 소개 파트
+=======================================================================================*/
+.text_badge {
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 3px;
+  margin-bottom: 10px;
+  color:white;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.text_badge:hover {
+  opacity: 1;
+}
+
+.text_badge_head {
+  padding:0px 10px;
+  background: linear-gradient(180deg,rgb(84, 84, 84),rgb(60, 60, 60));
+  background-color: white;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  margin-right: -3px;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 25px;
+  height: 25px;
+  float:left;
+}
+
+.text_badge_content {
+  padding:0px 10px;
+  background: linear-gradient(180deg,$primary,$primary-dark);
+  color:white;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  line-height: 25px;
+  display: inline-block;
+  height: 25px;
+  float:none;
+}
+
+.aboutme_section_title{
+  padding-left: 20px;
+  font-size: 24px;
+  border-left: 7px solid $primary-dark;
+  line-height: 40px;
+  height: 40px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+
+.aboutme_introduce_section li {
+  background: linear-gradient(90deg, rgb(240, 240, 240),rgb(240, 240, 240),#d4c9f0, #d4c9f0);
+  background-size: 300%;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding : 0px 20px;
+  transition: 0.6s;
+  cursor:default;
+}
+
+.aboutme_introduce_section td {
+  line-height: 40px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.aboutme_introduce_section li:hover {
+  background-position: right;
+
+  td { color:$primary-dark; }
+}
+
+.aboutme_introduce_section i {
+  font-size: 20px;
+  margin-right: 10px;
+  color:$primary-dark;
+  height: 40px;
+  line-height: 40px;
+  float : left;
+}
+
+@media (max-width:$break-small) {
+  .aboutme_introduce_section td {
+    line-height: 25px;
+  }
+
+  .aboutme_introduce_section i {
+    height: 25px;
+    line-height: 25px;
+  }
+}
+
+.aboutme_introduce_section span {
+  float: none;
+}
+
+
+
+
+/*=======================================================================================
+  학력 및 경력 사항 파트
+=======================================================================================*/
+
+
+.aboutme_edu_table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.aboutme_edu_table td {
+  line-height: 30px;
+
+  @media (max-width: $break-small) {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+.aboutme_edu_table_head td {
+  border-bottom: 1px solid $grey-2;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (max-width:$break-small) {
+  .aboutme_edu_table_extra {
+    display: none;
+  }
+}
+
+.aboutme_edu_subtitle {
+  font-size: 17px;
+  font-weight: 400;
+  color:rgb(163, 163, 163);
+  margin-bottom: 10px;
+}
+
+
+
+
+
+/*=======================================================================================
+  기술 스택 파트
+=======================================================================================*/
+.aboutme_stack_graph {
+  width: 100%;
+  height: 300px;
+}
+
+.aboutme_stack_cards {
+  width: 18.5%;
+  margin-left: 0.4%;
+
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.aboutme_stack_cards img {
+  transition: 0.2s;
+  transform:scale(0.9);
+  cursor:zoom-in;
+}
+
+.aboutme_badge_desc {
+  display: none;
+  z-index: 30;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.79);
+  color:white;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  width: 550px;
+  top:-15px;
+  left:50%;
+  transition: 0.3s;
+  opacity: 0;
+  text-align: left;
+  font-weight: 300;
+}
+
+.HL {
+  color:$yellow;
+}
+
+.aboutme_stack_cards:hover {
+  img {
+    transform:scale(1.0);
+  }
+
+  .aboutme_badge_desc {
+    display: block;
+    opacity: 1;
+    top:-30px;
+  }
+
+  @media (max-width : $break-small) {
+    .badge-left, .badge-right, .badge-left2, .badge-right2,
+    .badge-center1, .badge-center2  {
+      width: 100vw;
+      transform: translate(-50%,0%);
+      position: fixed;
+      top:auto !important;
+      bottom:0px !important;
+    }
+  }
+}
+
+.badge-left {
+  transform: translate(0%,-50%);
+}
+
+.badge-right {
+  transform: translate(-100%,-50%);
+}
+
+.badge-left2 {
+  transform: translate(-25%,-50%);
+}
+
+.badge-right2 {
+  transform: translate(-75%,-50%);
+}
+
+.badge-center1, .badge-center2 {
+  transform: translate(-50%,-50%);
+}
+
+
+/*=======================================================================================
+  메인 프로젝트 파트
+=======================================================================================*/
+
+.aboutme_project_center_div {
+  margin-top: 30px;
+  text-align: center; align-items: center;
+}
+
+.aboutme_project_card {
+  width: calc(33% - 10px);
+  margin-left: 8px;
+  margin-bottom: 15px;
+  text-align: left;
+  align-items: left;
+  display: inline-block;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.57);
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 410px;
+
+  @media (min-width: 1920px) {min-height: 410px;}
+  @media (max-width: 1630px) {width: calc(50% - 20px); height: 440px;}
+  @media (max-width: 1436px) {width: calc(50% - 20px); height: 403px;}
+  @media (max-width: 1200px) {width: calc(50% - 20px); height: 460px;}
+  @media (max-width: 970px) {width: calc(50% - 20px); height: 410px;}
+  @media (max-width: 560px) {width: calc(50% - 20px); height: 420px;}
+  @media (max-width: 670px) { height: 500px; width: 100%; margin-left:0px; margin-bottom: 20px;}
+}
+
+.aboutme_project_card:hover {
+  .aboutme_project_card_main
+  .aboutme_project_card_img
+  .aboutme_proejct_card_real_img {
+    transform: scale(1.2);
+  }
+
+  .aboutme_project_card_main
+  .aboutme_project_card_img
+  .aboutme_project_card_img_dark {
+    opacity: 0.2;
+
+    @media (max-width: 1200px) { opacity: 0; }
+  }
+}
+
+.aboutme_project_card {
+  position: relative;
+}
+
+.aboutme_project_card_img_dark {
+  z-index: 2;
+  background: #000000;
+  opacity: 0.6;
+  @media (max-width: 1200px) { opacity: 0; }
+}
+
+.aboutme_project_card_task {
+  font-size: 12px;
+}
+
+.aboutme_project_card_keyword_wrap {
+  position: absolute;
+  width: calc(100% - 20px);
+  left:20px;
+  bottom:20px;
+}
+
+.aboutme_project_card_img {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin-top: 0 !important;
+  overflow: hidden;
+}
+
+.aboutme_project_card_img:after {
+  content: "";
+  display: block;
+  padding-bottom: 50%;
+}
+
+.aboutme_project_card_img:nth-child(1) .aboutme_project_card_img:after,
+.aboutme_project_card_img:nth-child(2) .aboutme_project_card_img:after,
+.aboutme_project_card_img:nth-child(3) .aboutme_project_card_img:after {
+  padding-bottom: 100%;
+}
+
+.aboutme_project_card_img_dark,.aboutme_proejct_card_real_img {
+  transition: 0.3s;
+  position: absolute;
+background-position: center center; background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.aboutme_project_card_text {
+  padding : 20px;
+}
+
+.aboutme_project_card_title {
+  font-size: 23px;
+  color:$primary;
+  font-weight: 500;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.aboutme_project_card_desc {
+  font-size: 14px;
+  color : $grey-7;
+  font-weight: 300;
+}
+
+.aboutme_project_card_keyword {
+  margin-top: 10px;
+  font-size: 13px;
+  padding : 2px 10px;
+  border-radius: 3px;
+  background-color: $primary;
+  color:white;
+  display: inline-block !important;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.aboutme_project_card_text span {
+  display: block;
+}
+
+
+
+
+
+/*=======================================================================================
+  국내 및 해외 논문 파트
+=======================================================================================*/
+
+.aboutme_thesis_table_head td {
+  text-align: center;
+  border-bottom: 1px solid $grey-8;
+}
+
+.aboutme_thesis_table_tr td:first-child {padding-left: 10px;}
+
+.aboutme_thesis_table tr td:nth-child(2) {
+  width: 110px;
+  text-align: center;
+
+  @media (max-width: $break-small) {
+    width: 55px;
+  }
+}
+
+.aboutme_thesis_table tr td:nth-child(3),
+.aboutme_thesis_table tr td:nth-child(4) {
+  width: 80px;
+  text-align: center;
+
+  @media (max-width: $break-small) {
+    width: 50px;
+  }
+}
+
+.aboutme_thesis_table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing:0px;
+}
+
+.aboutme_thesis_table td {
+  padding:5px;
+}
+
+.aboutme_thesis_table_tr {
+
+  @media (max-width: $break-small) {
+    font-size: 10px;
+  }
+}
+
+.aboutme_thesis_table_tr:nth-child(even) {
+  background-color: #fAfAfA;
+}
+
+/*=======================================================================================
+  다른 프로젝트 파트
+=======================================================================================*/
+.aboutme_other_project_div {
+  padding: 15px 0px;
+  border-top: 1px solid #e4e4e4;
+  position: relative;
+  word-break: break-all !important;
+}
+
+.aboutme_other_project_div:last-child {border-bottom : 1px solid #e4e4e4;}
+
+
+.aboutme_other_project_img_td, .aboutme_other_project_text_td  {
+  display: inline-block;
+}
+
+.aboutme_other_project_img_td {width: 215px !important; padding:0px 20px 10px 5px; position:absolute; top:15;}
+.aboutme_other_project_img { width: 190px;}
+.aboutme_other_project_text_td {position:relative;padding-left: 218px; min-height: 200px;}
+@media (max-width:$break-small) {
+  .aboutme_other_project_img_td {width: 130px !important;}
+  .aboutme_other_project_img {width: 105px !important;}
+  .aboutme_other_project_text_td {padding-left: 133px;}
+}
+
+
+
+.aboutme_other_project_text_td span {display: block;}
+
+.aboutme_other_project_language_platform_div span,
+.aboutme_other_project_public , .aboutme_other_project_private
+{ display: inline-block !important;}
+
+.aboutme_other_project_ref_div {
+  width: 10%;
+  display: inline-block;
+  padding-top : 10px;
+  padding-bottom : 0px;
+  transition: 0.3s;
+  @media (max-width: 670px) {
+    width: 30%;
+    padding-top : 0px;
+    padding-bottom : 0px;
+  }
+}
+
+@media (min-width: 670px) {
+  .aboutme_other_project_ref_div:hover {
+    padding-bottom : 10px;
+    padding-top : 0px;
+  }
+}
+
+.aboutme_other_project_title {
+  font-size: 24px;
+  color:$primary-dark;
+  font-weight: 600;
+}
+
+.aboutme_other_project_public, .aboutme_other_project_private {
+  text-transform: uppercase;
+  padding: 0px 14px;
+  border-radius: 5px;
+  color : white;
+  font-size: 15px;
+  margin-left: -10px;
+  transform: scale(0.7);
+  opacity: 0.8;
+  display: inline-block !important;
+}
+.aboutme_other_project_public {background-color: rgb(39, 72, 107);}
+.aboutme_other_project_private {background-color: rgb(107, 39, 59);}
+
+.aboutme_other_project_short_desc {color:$primary}
+
+.aboutme_other_project_desc {
+  color: $grey-8; font-size: 13px; margin-top: 10px;
+  @media (max-width: 670px) { font-size:12px; margin-top: 5px;}
+}
+
+.aboutme_other_project_git_a {display: block;}
+
+.text_badge2 { border-radius: 6px; overflow: hidden; width: 150px; margin-top: 5px; margin-bottom: -5px;}
+.text_badge_content2 { padding:0px 0px 0px 40px; }
+.aboutme_other_project_warning {
+  display: inline-block !important;
+  background: rgb(234, 216, 247);
+  padding: 0 12px;
+  font-size: 13px;
+  margin-top: 5px;
+  @media (max-width: 670px) { padding: 5px 12px; }
+}
+
+.aboutme_other_project_language, .aboutme_other_project_platform {
+  padding: 0px 14px;
+  border-radius: 5px;
+  color : white;
+  font-size: 11px;
+  display: inline-block !important;
+}
+.aboutme_other_project_language {background-color: $primary; }
+.aboutme_other_project_platform {background-color: rgb(159, 159, 159); }
+.aboutme_other_project_ref_wrap_div {
+  text-align:right;
+  @media (max-width: 670px) { text-align:left; padding-top: 10px;}
+}
+
+/*=======================================================================================
+  대외 활동 파트
+=======================================================================================*/
+.aboutme_extra_card {
+  width: 48%;
+  height: 200px;
+  margin-bottom: 12px;
+  display: inline-block;
+  span {display: block;}
+  margin-left: 1%;
+  background-color: rgb(236, 236, 236);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.aboutme_extra_card_img_td {
+  width: calc(200px - 10px);
+  height: calc(200px - 10px);
+
+  img {
+    margin-top:-2px;
+    border-radius: 5px;
+  }
+}
+
+.aboutme_extra_card_img_td2 {
+  padding-left: 5px;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.aboutme_extra_card_name {
+  font-weight: 600;
+  font-size: 25px;
+  color:$primary;
+  margin-bottom: 5px;
+}
+
+.aboutme_extra_card_period {
+  margin-bottom: 10px;
+}
+
+.aboutme_extra_card_sub {
+  color: rgb(82, 43, 98);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.aboutme_extra_card_desc {
+  color:$grey-1;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+@media (max-width:1480px) {
+  .aboutme_extra_card {
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .aboutme_extra_card_img_td2 {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width:$break-small) {
+  .aboutme_extra_card_img_td {
+    display: block;
+    position: relative;
+    width: calc(150px - 6px);
+    height: calc(150px - 6px);
+    margin-top: 10px !important;
+  }
+}
+
+.aboutme_activity_video {
+  width: calc(33% - 10px);
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  display: inline-block !important;
+}
+
+@media (max-width:$break-small) {
+  .aboutme_activity_video {
+    width: calc(50% - 3px);
+  }
+}
+
+.aboutme_activity_video_play_button {
+  width: 20%;
+  opacity: 0.8;
+  transition: 0.3s;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left:50%;
+  top:50%;
+}
+
+.aboutme_activity_video_play_button:hover { opacity: 0.3; }
+
+.aboutme_activity_video_name {
+  position: absolute;
+  font-size: 15px;
+  font-weight: 500;
+  color:white;
+  top:10px;
+  left:10px;
+}
+
+.aboutme_activity_video_black {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  top:0; left:0;
+  transition: 0.3s;
+}
+
+.aboutme_activity_video:hover {
+  .aboutme_activity_video_play_button { opacity: 0.7; }
+  .aboutme_activity_video_black {background-color: rgba(0, 0, 0, 0.4);}
+}
