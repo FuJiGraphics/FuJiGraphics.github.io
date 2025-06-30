@@ -1,6 +1,6 @@
 <div class="side_bar_right">
   {% assign sorted = site.posts | where: 'type', 'tech' %}
-  <div class="side_bar_title" id="side_bar_home"><i class="fas fa-code"></i> 영찬의 개발 블로그</div>
+  <div class="side_bar_title" id="side_bar_home"><i class="fas fa-code"></i> Choi's Dev Orbit</div>
   <div class="side_bar_category_div">
     <div class="side_bar_super_list" id="side_bar_profile">
       프로필
@@ -28,9 +28,9 @@
     <!--<div class="side_bar_super_list" id="side_bar_project">
       프로젝트
     </div>-->
-    <div class="side_bar_super_list" id="side_bar_BM">
+    <!-- <div class="side_bar_super_list" id="side_bar_BM">
       영찬의 빌드머신
-    </div>
+    </div> -->
   </div>
 </div>
 
@@ -62,10 +62,10 @@
   })
   */
 
-  side_bar_BM = document.getElementById('side_bar_BM')
-  side_bar_BM.addEventListener('click', () => {
-    location.href = "http://kyc-buildmachine.link/"
-  })
+  // side_bar_BM = document.getElementById('side_bar_BM')
+  // side_bar_BM.addEventListener('click', () => {
+  //   location.href = "http://kyc-buildmachine.link/"
+  // })
 
   {% for item in site.data.tags %}
     side_bar_{{item}} = document.getElementById('side_bar_{{item}}')
