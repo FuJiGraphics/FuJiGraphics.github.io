@@ -1,11 +1,11 @@
-- period : 2020.03 ~ 2022.02
-  school : 연세대학교
-  major : 컴퓨터 과학
-  degree : 석사
-  remark : 산학연과정(KETI)
+# - period : 2020.03 ~ 2022.02
+#   school : 연세대학교
+#   major : 컴퓨터 과학
+#   degree : 석사
+#   remark : 산학연과정(KETI)
 
-- period : 2013.03 ~ 2020.02
-  school : 한국항공대학교
-  major : 전자및항공전자공학
-  degree : 학사
-  remark : 우등졸업
+# - period : 2013.03 ~ 2020.02
+#   school : 한국항공대학교
+#   major : 전자및항공전자공학
+#   degree : 학사
+#   remark : 우등졸업

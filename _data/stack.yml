@@ -1,49 +1,49 @@
-- name : "C#"
-  img : ./img/Badge_CS.png
-  content : <ul class="aboutme_badge_desc badge-left">
-              <li>ㅡ C#에서 지향하는 <span class="HL">객체지향 프로그래밍</span>에 맞춰 작업 할 수 있습니다.</li>
-              <li>ㅡ .NET 프레임워크를 사용하여 GUI프로그램을 개발할 수 있습니다.</li>
-              <li>ㅡ 다양한 디자인패턴을 적용한 프로젝트를 개발할 수 있습니다.</li>
-            </ul>
+# - name : "C#"
+#   img : ./img/Badge_CS.png
+#   content : <ul class="aboutme_badge_desc badge-left">
+#               <li>ㅡ C#에서 지향하는 <span class="HL">객체지향 프로그래밍</span>에 맞춰 작업 할 수 있습니다.</li>
+#               <li>ㅡ .NET 프레임워크를 사용하여 GUI프로그램을 개발할 수 있습니다.</li>
+#               <li>ㅡ 다양한 디자인패턴을 적용한 프로젝트를 개발할 수 있습니다.</li>
+#             </ul>
 
-- name : Unity
-  img : ./img/Badge_Unity.png
-  content : <ul class="aboutme_badge_desc badge-left2">
-              <li>ㅡ Windows / WebGL / 안드로이드 / iOS에서 <span class="HL">다양한 개발 경험</span>이 있습니다.</li>
-              <li>ㅡ 모바일 SDK와 연동가능한 Plugin을 구현할 수 있습니다.</li>
-              <li>ㅡ GitHub에 직접 구현한 <span class="HL">오픈소스 라이브러리</span>를 공개하고 관리하고 있습니다.</li>
-            </ul>
+# - name : Unity
+#   img : ./img/Badge_Unity.png
+#   content : <ul class="aboutme_badge_desc badge-left2">
+#               <li>ㅡ Windows / WebGL / 안드로이드 / iOS에서 <span class="HL">다양한 개발 경험</span>이 있습니다.</li>
+#               <li>ㅡ 모바일 SDK와 연동가능한 Plugin을 구현할 수 있습니다.</li>
+#               <li>ㅡ GitHub에 직접 구현한 <span class="HL">오픈소스 라이브러리</span>를 공개하고 관리하고 있습니다.</li>
+#             </ul>
 
-- name : Git
-  img : ./img/Badge_Git.png
-  content : <ul class="aboutme_badge_desc badge-center1">
-              <li> Github 등급 ( API ： <span id="git_state" style="color:yellow; cursor:pointer;">Github Readme Stats</span> )</li>
-              <img src = "https://github-readme-stats.vercel.app/api?username=kimyc1223&amp;count_private=true&amp;hide=contribs,prs&amp;show_icons=true&amp;theme=vue-dark" id="my_git_state" style ="cursor:pointer;">
-              <script>
-                git_state = document.getElementById('git_state');
-                git_state.addEventListener('click', () => {
-                  location.href="https://github.com/anuraghazra/github-readme-stats";
-                });
+# - name : Git
+#   img : ./img/Badge_Git.png
+#   content : <ul class="aboutme_badge_desc badge-center1">
+#               <li> Github 등급 ( API ： <span id="git_state" style="color:yellow; cursor:pointer;">Github Readme Stats</span> )</li>
+#               <img src = "https://github-readme-stats.vercel.app/api?username=kimyc1223&amp;count_private=true&amp;hide=contribs,prs&amp;show_icons=true&amp;theme=vue-dark" id="my_git_state" style ="cursor:pointer;">
+#               <script>
+#                 git_state = document.getElementById('git_state');
+#                 git_state.addEventListener('click', () => {
+#                   location.href="https://github.com/anuraghazra/github-readme-stats";
+#                 });
 
-                my_git_state = document.getElementById('my_git_state');
-                my_git_state.addEventListener('click', () => {
-                  location.href="https://github.com/KimYC1223";
-                });
-              </script>
-            </ul>
+#                 my_git_state = document.getElementById('my_git_state');
+#                 my_git_state.addEventListener('click', () => {
+#                   location.href="https://github.com/KimYC1223";
+#                 });
+#               </script>
+#             </ul>
 
-- name : Web
-  img : ./img/Badge_Web.png
-  content : <ul class="aboutme_badge_desc badge-center2">
-              <li>ㅡ HTML5과 CSS3를 이해하고 <span class="HL">반응형 웹사이트</span>를 만들 수 있습니다.</li>
-              <li>ㅡ Jekyll을 통해 github page 기반 개발 블로그를 운영할 수 있습니다.</li>
-              <li>ㅡ 개발 블로그의 테마 디자인을 직접 수정하여 사용할 수 있습니다.</li>
-            </ul>
+# - name : Web
+#   img : ./img/Badge_Web.png
+#   content : <ul class="aboutme_badge_desc badge-center2">
+#               <li>ㅡ HTML5과 CSS3를 이해하고 <span class="HL">반응형 웹사이트</span>를 만들 수 있습니다.</li>
+#               <li>ㅡ Jekyll을 통해 github page 기반 개발 블로그를 운영할 수 있습니다.</li>
+#               <li>ㅡ 개발 블로그의 테마 디자인을 직접 수정하여 사용할 수 있습니다.</li>
+#             </ul>
 
-- name : Javascript
-  img : ./img/Badge_Javascript.png
-  content : <ul class="aboutme_badge_desc badge-right2">
-              <li>ㅡ 개발하고자 하는 웹 페이지의 동작을 구현 할 수 있습니다.</li>
-              <li>ㅡ AngularJS, React.JS를 활용하여 <span class="HL">동적인 웹페이지</span>를 구현 할 수 있습니다.</li>
-              <li>ㅡ 개발문서를 읽고 원하는 기능을 개발할 수 있습니다.</li>
-            </ul>
+# - name : Javascript
+#   img : ./img/Badge_Javascript.png
+#   content : <ul class="aboutme_badge_desc badge-right2">
+#               <li>ㅡ 개발하고자 하는 웹 페이지의 동작을 구현 할 수 있습니다.</li>
+#               <li>ㅡ AngularJS, React.JS를 활용하여 <span class="HL">동적인 웹페이지</span>를 구현 할 수 있습니다.</li>
+#               <li>ㅡ 개발문서를 읽고 원하는 기능을 개발할 수 있습니다.</li>
+#             </ul>
