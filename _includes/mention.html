@@ -44,7 +44,7 @@
     <div class="info">
       <span class="writer">by {{ writer.name }}</span>
       <span class="split">·</span>
-      <span class="date">{{ mention.date }}</span>
+      <span class="date">{{ mention.date | date: "%Y년 %m월 %d일" }}</span>
     </div>
   </div>
 </div>
