@@ -57,7 +57,6 @@
     location.href = "/project"
   })
 
-
   {% for item in site.data.tags %}
     side_bar_{{item}} = document.getElementById('side_bar_{{item}}')
     side_bar_{{item}}.addEventListener('click', () => {
