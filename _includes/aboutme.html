@@ -107,17 +107,6 @@
     <div class = "aboutme_edu">
       <div class="aboutme_section_title">학력 및 경력 사항</div>
         <div class="aboutme_greeting_subdiv">
-          <div class="aboutme_edu_subtitle">학력 사항</div>
-          <table class="aboutme_edu_table">
-            <tr class="aboutme_edu_table_head"> <td>기간</td> <td>학교</td> <td>전공</td> <td>학위</td> <td class="aboutme_edu_table_extra">비고</td>
-            </tr>
-            {% assign education = site.data.edu %}
-            {% for edu in education %}
-            <tr> <td>{{ edu.period }}</td> <td>{{ edu.school }}</td> <td>{{ edu.major }}</td> <td>{{ edu.degree }}</td>
-                 <td class="aboutme_edu_table_extra">{{ edu.remark }}</td> </tr>
-            {% endfor %}
-          </table>
-
           <div class="aboutme_edu_subtitle">경력 사항</div>
           <table class="aboutme_edu_table">
             <tr class="aboutme_edu_table_head"> <td>기간</td> <td>기관 명</td> <td>직책</td> </tr>

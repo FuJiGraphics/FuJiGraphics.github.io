@@ -25,12 +25,9 @@
     <div class="side_bar_super_list" id="side_bar_life">
      일상 이야기
     </div>
-    <!--<div class="side_bar_super_list" id="side_bar_project">
+    <div class="side_bar_super_list" id="side_bar_project">
       프로젝트
-    </div>-->
-    <!-- <div class="side_bar_super_list" id="side_bar_BM">
-      영찬의 빌드머신
-    </div> -->
+    </div>
   </div>
 </div>
 
@@ -55,17 +52,11 @@
     location.href = "/life"
   })
 
-  /*
   side_bar_project = document.getElementById('side_bar_project')
   side_bar_project.addEventListener('click', () => {
     location.href = "/project"
   })
-  */
 
-  // side_bar_BM = document.getElementById('side_bar_BM')
-  // side_bar_BM.addEventListener('click', () => {
-  //   location.href = "http://kyc-buildmachine.link/"
-  // })
 
   {% for item in site.data.tags %}
     side_bar_{{item}} = document.getElementById('side_bar_{{item}}')
