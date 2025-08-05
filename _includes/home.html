@@ -4,12 +4,10 @@
       <span class="title"><span class="label-emoji">✍️</span>&nbsp;최근 게시물</span>
       <div class="content">
         <table class="catalogue">
-          <tr>
-            {% assign sorted = site.posts | sort: 'date' | reverse | where: 'type', 'tech' %}
-            {% for page in sorted limit:4 %}
-            {% include post-card.html %}
-            {% endfor %}
-          </tr>
+          {% assign sorted = site.posts | sort: 'date' | reverse | where: 'type', 'tech' %}
+          {% for page in sorted limit:4 %}
+          {% include post-card.html page=page %}
+          {% endfor %}
         </table>
       </div>
     </div>
