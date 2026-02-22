@@ -6,7 +6,7 @@ main: true
 
 <div class="loading-animation2">
 
-{% include hashtag.html %}
+{% include hashtag.html tag_group="tech" %}
 
 <ul class="catalogue">
 {% assign sorted = site.posts | sort: 'date' | reverse | where: 'type', 'tech' %}

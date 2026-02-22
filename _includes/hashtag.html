@@ -20,7 +20,7 @@
     }
 
     function updateQueryString(tagName) {
-        window.location = '/tags/?tag=' + tagName;
+        window.location = baseUrl + '?tag=' + tagName;
     }
 
     function searchParam(key) {
@@ -38,7 +38,8 @@
 
     function getAllTagList() {
         let tagArray = [];
-        {% for item in site.data.tags %}
+        {% assign tag_group = include.tag_group | default: 'tech' %}
+        {% for item in site.data.tags[tag_group] %}
             tagArray.push('{{item}}');
         {% endfor %}
         return tagArray;

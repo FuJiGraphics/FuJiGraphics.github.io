@@ -1,7 +1,15 @@
 <div class="post-list-tags">
     {% if page.tags %}
         {% for tag in page.tags %}
-            <a class="tag_a" data-tag="{{ tag }}" href="/tags/?tag={{ tag }}"><span class="tag" data-tag="{{ tag }}">{{ tag }}</span></a>
+            {% if page.type == 'algorithm' %}
+                <a class="tag_a" data-tag="{{ tag }}" href="/algorithm/?tag={{ tag }}">
+                    <span class="tag" data-tag="{{ tag }}">{{ tag }}</span>
+                </a>
+            {% else %}
+                <a class="tag_a" data-tag="{{ tag }}" href="/tech/?tag={{ tag }}">
+                    <span class="tag" data-tag="{{ tag }}">{{ tag }}</span>
+                </a>
+            {% endif %}
         {% endfor %}
     {% endif %}
 </div>

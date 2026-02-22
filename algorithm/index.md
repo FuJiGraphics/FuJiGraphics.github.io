@@ -6,10 +6,10 @@ main: true
 
 <div class="loading-animation2">
 
-{% include hashtag.html base_url="/algorithm" %}
+{% include hashtag.html base_url="/algorithm" tag_group="algorithm" %}
 
 <ul class="catalogue">
-{% assign sorted = site.posts | sort: 'date' | reverse | where_exp: "item", "item.tags contains 'Algorithm'" %}
+{% assign sorted = site.posts | sort: 'date' | reverse | where: 'type', 'algorithm' %}
 {% for page in sorted %}
   {% include post-list.html %}
 {% endfor %}
