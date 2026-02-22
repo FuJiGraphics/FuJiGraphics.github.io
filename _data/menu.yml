@@ -4,5 +4,8 @@
 - id: tech
   label: 테크노트
 
+- id: algorithm
+  label: 알고리즘
+
 - id: life
   label: 일상 이야기
