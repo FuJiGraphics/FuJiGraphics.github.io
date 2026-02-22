@@ -1,6 +1,5 @@
 ---
 layout: main
-paginate: true
 title: 알고리즘
 main: true
 ---
@@ -9,15 +8,12 @@ main: true
 
 {% include hashtag.html base_url="/algorithm" %}
 
-
 <ul class="catalogue">
-{% assign sorted = paginator.posts | sort: 'date' | reverse | where_exp: "item", "item.tags contains 'Algorithm'" %}
-
+{% assign sorted = site.posts | sort: 'date' | reverse | where_exp: "item", "item.tags contains 'Algorithm'" %}
 {% for page in sorted %}
-{% include post-list.html %}
+  {% include post-list.html %}
 {% endfor %}
 {% include post-list-empty.html %}
 
-{% include pagination.html %}
 </ul>
 </div>

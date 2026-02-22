@@ -18,11 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Choi's Dev Orbit
+title: Game Dev Blog
 author: FuJiGraphics
 email: chlcjfwls1@naver.com
 description: >- # this means to ignore newlines until "baseurl:"
- Choi's Dev Orbit
+ Game Dev Blog
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://FuJiGraphics.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
