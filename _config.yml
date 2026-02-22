@@ -32,6 +32,7 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-sitemap
+  - jekyll-paginate
 plugins_dir: ./_plugins
 
 collections:
@@ -45,7 +46,7 @@ kramdown:
   syntax_highlighter_opts:
     css_class   : 'syntax'
 
-paginate : 6
+paginate: 6
 paginate_path: "/tech/page:num/"
 sort_reverse: true
 future: false

@@ -11,7 +11,8 @@ main: true
 
 
 <ul class="catalogue">
-{% assign sorted = paginator.posts | sort: 'date' | reverse | where: 'type', 'algorithm' %}
+{% assign sorted = paginator.posts | sort: 'date' | reverse | where_exp: "item", "item.tags contains 'Algorithm'" %}
+
 {% for page in sorted %}
 {% include post-list.html %}
 {% endfor %}
