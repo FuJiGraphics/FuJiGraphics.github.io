@@ -7,7 +7,7 @@ main: true
 
 <div class="loading-animation2">
 
-{% include hashtag.html %}
+{% include hashtag.html base_url="/algorithm" %}
 
 
 <ul class="catalogue">

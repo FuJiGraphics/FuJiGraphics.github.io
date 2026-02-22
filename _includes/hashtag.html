@@ -1,5 +1,6 @@
 <script>
     let SelectedTag = "";
+    const baseUrl = "{{ include.base_url | default: '/tech' }}";
 
     function filterByTagName(tagName) {
         $('.hidden').removeClass('hidden');
@@ -13,7 +14,7 @@
         });
         $(".tag").removeClass('selected');
         $(".tag[data-tag=" + tagName + "]").addClass('selected');
-        $(".tag_a[data-tag=" + tagName + "]").attr("href", "/tech")
+        $(".tag_a[data-tag=" + tagName + "]").attr("href", baseUrl)
         if(check_count == 0)  { $("#emptyDiv").removeClass('hiddenEmptyDiv');}
         else { $("#emptyDiv").addClass('hiddenEmptyDiv');}
     }
@@ -66,7 +67,7 @@
             if(SelectedTag != currentTag) {
                 updateQueryString(currentTag);
             } else {
-                window.location = '/tech'
+                window.location = baseUrl
             }
         })
     }
