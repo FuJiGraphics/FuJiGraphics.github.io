@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "[Career] 일본 취업박람회 후기"
+title: "[Career] 일본 취업박람회 후기2"
 subtitle: "취업 준비"
-date: 2025-07-11 09:00
+date: 2025-07-11 09:01
 writer: FuJiGraphics
 categories: [tech]
 tags: [Career]

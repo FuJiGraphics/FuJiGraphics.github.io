@@ -5,10 +5,10 @@
         <span class="pagination_button_disable pagination_move_button">&lt;</span>
     {% endif %}
 
-    {% if paginator.page == 1%}
+    {% if paginator.page == 1 %}
         <span class="pagination_button_select">1</span>
     {% else %}
-        <a href="{{ page.dir }}"><span class="pagination_button">1</span></a>
+        <a href="{{ page.dir | append: '/' | replace: '//', '/' }}"><span class="pagination_button">1</span></a>
     {% endif %}
 
     {% assign left_min = paginator.page | minus : 4 %}
@@ -20,12 +20,12 @@
     
     {% for i in (left_min..left_max) %}
         {% if i >= 2 %}
-            <a href="{{ page.dir }}page{{i}}"><span class="pagination_button">{{i}}</span></a>
+            <a href="{{ page.dir | append: '/page/' | append: i | append: '/' | replace: '//', '/' }}"><span class="pagination_button">{{i}}</span></a>
         {% endif %}
     {% endfor %}
 
-    {% if paginator.page != 1 and paginator.page != paginator.total_pages%}
-        <a href="{{ page.dir }}page{{paginator.page}}"><span class="pagination_button_select">{{paginator.page}}</span></a>
+    {% if paginator.page != 1 and paginator.page != paginator.total_pages %}
+        <a href="{{ page.dir | append: '/page/' | append: paginator.page | append: '/' | replace: '//', '/' }}"><span class="pagination_button_select">{{paginator.page}}</span></a>
     {% endif %}
 
     {% assign right_min = paginator.page | plus : 1 %}
@@ -34,7 +34,7 @@
 
     {% for i in (right_min..right_max) %}
         {% if i < paginator.total_pages %}
-            <a href="{{ page.dir }}page{{i}}"><span class="pagination_button">{{i}}</span></a>
+            <a href="{{ page.dir | append: '/page/' | append: i | append: '/' | replace: '//', '/' }}"><span class="pagination_button">{{i}}</span></a>
         {% endif %}
     {% endfor %}
 
@@ -46,7 +46,7 @@
         {% if paginator.page == paginator.total_pages %}
             <span class="pagination_button_select">{{paginator.total_pages}}</span>
         {% else %}
-            <a href="{{ page.dir }}page{{paginator.total_pages}}"><span class="pagination_button">{{paginator.total_pages}}</span></a>
+            <a href="{{ page.dir | append: '/page/' | append: paginator.total_pages | append: '/' | replace: '//', '/' }}"><span class="pagination_button">{{paginator.total_pages}}</span></a>
         {% endif %}
     {% endif %}
 
@@ -55,5 +55,4 @@
     {% else %}
         <span class="pagination_button_disable pagination_move_button">&gt;</span>
     {% endif %}
-
 </div>

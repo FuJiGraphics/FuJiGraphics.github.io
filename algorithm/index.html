@@ -1,15 +1,15 @@
 ---
 layout: main
-title: 테크노트
+title: 알고리즘
 main: true
 pagination:
   enabled: true
   collection: posts
-  category: tech
+  category: algorithm
 ---
 
 <div class="loading-animation2">
-  {% include hashtag.html base_url="/tech" tag_group="tech" %}
+  {% include hashtag.html base_url="/algorithm" tag_group="algorithm" %}
 
   <ul class="catalogue">
     {% for page in paginator.posts %}
