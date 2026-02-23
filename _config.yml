@@ -28,14 +28,17 @@ pagination:
   per_page: 6
   permalink: '/page/:num/'
   index_page_name: 'index.html'
-  sort_reverse: true
 
 autopages:
   enabled: true
   tags:
     enabled: true
     layouts: 
-      - archive  # 아래에서 만들 공통 레이아웃
-    permalink: '/:tag_dir/:tag/'
+      - archive.html  # 반드시 확장자 포함
+    permalink: '/tag/:tag/' # 윈도우 폴더 생성 오류 방지
+  categories:
+    enabled: false
+  collections:
+    enabled: false
 
 timezone: Asia/Seoul

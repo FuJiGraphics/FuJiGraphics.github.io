@@ -1,147 +1,22 @@
-<script>
-    // [변수] 현재 선택된 태그가 무엇인지 저장 (중복 클릭 방지 및 상태 확인용)
-    let SelectedTag = ""; 
+<div class="tag-container" style="text-align: center; margin-bottom: 20px;">
+  <div class="tag-list">
+    {% assign group = include.tag_group %}
     
-    // [설정] 기본적으로 이동할 주소 (include 시 base_url이 없으면 '/tech' 사용)
-    const baseUrl = "{{ include.base_url | default: '/tech' }}";
+    <a href="/{{ group }}/" class="tag {% unless page.autopage %}selected{% endunless %}" style="margin: 5px; padding: 5px 10px; border: 1px solid #ddd; border-radius: 5px; text-decoration: none; display: inline-block;">
+      ALL
+    </a>
 
-    /**
-     * [함수] 실제 화면에서 글을 숨기거나 보여주는 '심판' 역할
-     * @param tagName 필터링할 태그 이름
-     */
-    function filterByTagName(tagName) {
-        // 1. 일단 숨겨진 글들('.hidden')의 숨김을 모두 해제 (초기화)
-        $('.hidden').removeClass('hidden');
-        
-        var check_count = 0; // 해당 태그를 가진 글이 몇 개인지 셀 변수
-
-        // 2. 모든 포스트 아이템('.catalogue2-item')을 하나씩 조사
-        $('.catalogue2-item').each(function(index, elem) {
-            // [핵심 로직] 엘리먼트가 'data-태그명'이라는 속성을 가지고 있는지 확인
-            // 예: 태그가 DFS라면, <li data-DFS>가 있는지 확인하는 것
-            if (!elem.hasAttribute("data-" + tagName)) {
-                // 속성이 없으면 'hidden' 클래스를 추가해서 화면에서 숨김
-                $(elem).addClass('hidden');
-            } else {
-                // 속성이 있으면 보여지는 글이므로 카운트 증가
-                check_count ++;
-            }
-        });
-
-        // 3. UI 변경: 모든 태그 버튼에서 'selected' 클래스 제거 후, 클릭한 태그에만 추가
-        $(".tag").removeClass('selected');
-        $(".tag[data-tag=" + tagName + "]").addClass('selected');
-
-        // 4. '다시 클릭하면 해제' 기능을 위해 href 주소를 기본 페이지(baseUrl)로 변경
-        $(".tag_a[data-tag=" + tagName + "]").attr("href", baseUrl)
-
-        // 5. 검색 결과가 0개면 '글이 없다'는 안내 문구(#emptyDiv)를 보여줌
-        if(check_count == 0) { 
-            $("#emptyDiv").removeClass('hiddenEmptyDiv');
-        } else { 
-            $("#emptyDiv").addClass('hiddenEmptyDiv');
-        }
-    }
-
-    /**
-     * [함수] 클릭했을 때 주소창에 ?tag=태그명 을 붙여서 페이지를 새로고침함
-     */
-    function updateQueryString(tagName) {
-        window.location = baseUrl + '?tag=' + tagName;
-    }
-
-    /**
-     * [함수] 주소창에서 특정 키(key)의 파라미터 값을 가져오는 도우미 (URLSearchParams 사용)
-     */
-    function searchParam(key) {
-      return new URLSearchParams(location.search).get(key);
-    };
-
-    /**
-     * [함수] 화면 상단에 태그 버튼 목록을 실제로 그려주는 역할
-     */
-    function makeTagList(){
-        let tagStrs = getAllTagList(); // Jekyll 데이터에서 태그 배열을 가져옴
-        for(let i = 0; i < tagStrs.length; i++){
-            var v = tagStrs[i];
-            // #tag-list 영역 안에 <span class="tag" data-tag="태그명">태그명</span> 을 추가
-            $("#tag-list")[0].innerHTML += '<span class="tag" data-tag="' + v +'">' + v + '</span>';
-        }
-        // 생성된 span들을 리스트 안에 정렬/배치
-        $('#tag-list span').appendTo('#tag-list');
-    }
-
-    /**
-     * [함수] Jekyll의 _data/tags.yml 파일에서 태그 목록을 뽑아와 자바스크립트 배열로 변환
-     */
-    function getAllTagList() {
-        let tagArray = [];
-        // include 시 전달받은 tag_group이 없으면 'tech' 폴더를 기본으로 탐색
-        {% assign tag_group = include.tag_group | default: 'tech' %}
-        // Jekyll Liquid 문법: site.data.tags[그룹명] 안의 모든 항목을 push
-        {% for item in site.data.tags[tag_group] %}
-            tagArray.push('{{item}}');
-        {% endfor %}
-        return tagArray;
-    }
-
-    /**
-     * [함수] 페이지 로드 시 주소창에 태그가 있으면(예: ?tag=DFS) 해당 태그를 즉시 적용
-     */
-    function linkTag(){
-        // 주소창의 '?tag=' 이후의 문자열을 잘라냄 (예: ?tag=DFS -> DFS)
-        const queryTag = window.location.search.substring(5);
-        const tags = getAllTagList(); // 유효한 태그 목록인지 검사하기 위해 가져옴
-        var flag = false;
-
-        // 주소창 태그가 실제 존재하는 태그 리스트에 있는지 확인
-        for(let i = 0; i < tags.length; i++){
-            if(queryTag === tags[i]){
-                flag = true;
-            }
-        }
-        // 유효한 태그라면 필터링 함수 실행
-        if (queryTag && flag) {
-            filterByTagName(queryTag);
-        }
-    }
-
-    /**
-     * [함수] 태그 버튼들에 클릭 이벤트를 바인딩(연결)함
-     */
-    function tagFilter(){
-        makeTagList(); // 태그 목록 그리기
-        linkTag();     // URL 파라미터 확인 후 초기 필터링
-        
-        // [이벤트 클릭] 태그 버튼(data-tag 속성을 가진 요소)을 클릭했을 때
-        $("[data-tag]").click(function(e) {
-            const currentTag = e.target.dataset.tag; // 클릭한 놈의 태그 이름 가져오기
-            if(SelectedTag != currentTag) {
-                // 새로운 태그면 주소창을 업데이트해서 필터링 시작
-                updateQueryString(currentTag);
-            } else {
-                // 이미 선택된 태그를 또 누르면 전체 보기(해제)를 위해 기본 페이지로 이동
-                window.location = baseUrl
-            }
-        })
-    }
-
-    /**
-     * [jQuery] 문서가 모두 로드되면 가장 먼저 실행되는 시작점
-     */
-    $(document).ready(function() {
-        tagFilter(); // 필터 기능 초기화
-        
-        var str = searchParam('tag'); // URL에서 'tag' 파라미터 값을 읽음
-        SelectedTag = str; // 전역 변수에 현재 선택된 태그 저장
-        
-        if(str == null || str == '') return // 태그가 없으면 종료
-        
-        const currentTag = str;
-        filterByTagName(currentTag); // 태그가 있으면 해당 태그로 필터링 실행
-    });
-</script>
-
-<div class="tag-container">
-  <div id="tag-list" class="tag-list"></div>
+    {% for t in site.data.tags[group] %}
+      {% assign t_slug = t | slugify %}
+      <a href="/tag/{{ t_slug }}/" 
+         class="tag {% if page.url contains t_slug %}selected{% endif %}"
+         style="margin: 5px; padding: 5px 10px; border: 1px solid #ddd; border-radius: 5px; text-decoration: none; display: inline-block;">
+        {{ t }}
+      </a>
+    {% endfor %}
+  </div>
 </div>
+
+<style>
+  .tag.selected { background-color: #333; color: #fff !important; }
+</style>

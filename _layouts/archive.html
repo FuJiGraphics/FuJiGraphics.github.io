@@ -1,0 +1,22 @@
+---
+layout: main
+---
+<div class="loading-animation2">
+  {% assign current_cat = page.category | default: paginator.posts.first.categories[0] %}
+  {% include hashtag.html tag_group=current_cat %}
+
+  <ul class="catalogue">
+    {% for post in paginator.posts %}
+      {% comment %} 
+        중요: post 객체를 post-list.html에 'post'라는 이름으로 전달합니다. 
+      {% endcomment %}
+      {% include post-list.html post=post %}
+    {% endfor %}
+
+    {% if paginator.posts.size == 0 %}
+      <p style="text-align: center; padding: 50px 0;">작성된 글이 없습니다.</p>
+    {% endif %}
+  </ul>
+
+  {% include pagination.html %}
+</div>
