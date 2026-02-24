@@ -6,13 +6,26 @@
       ALL
     </a>
 
+    {% assign cat_posts = site.posts | where: 'categories', group %}
+
     {% for t in site.data.tags[group] %}
       {% assign t_slug = t | slugify %}
-      <a href="/tag/{{ t_slug }}/" 
-         class="tag {% if page.url contains t_slug %}selected{% endif %}"
-         style="margin: 5px; padding: 5px 10px; border: 1px solid #ddd; border-radius: 5px; text-decoration: none; display: inline-block;">
-        {{ t }}
-      </a>
+      {% assign count = cat_posts | where: 'tags', t | size %}
+      
+      {% if count > 0 %}
+        <a href="/tag/{{ t_slug }}/" 
+           class="tag {% if page.url contains t_slug %}selected{% endif %}"
+           style="margin: 5px; padding: 5px 10px; border: 1px solid #ddd; border-radius: 5px; text-decoration: none; display: inline-block;">
+          {{ t }}
+        </a>
+      {% else %}
+        <a href="#" onclick="showEmptyState(event)"
+           class="tag"
+           style="margin: 5px; padding: 5px 10px; border: 1px solid #ddd; border-radius: 5px; text-decoration: none; display: inline-block;">
+          {{ t }}
+        </a>
+      {% endif %}
+
     {% endfor %}
   </div>
 </div>

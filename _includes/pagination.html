@@ -1,4 +1,16 @@
 <div class="pagination" style="text-align: center; margin-top: 30px;">
+    {% comment %} 
+      [핵심 로직] 현재 페이지 주소를 기반으로 베이스 경로(base_path)를 역추적합니다.
+      예: /tag/dfs/page/2/ 에 있다면 /page/2/ 부분을 지워서 /tag/dfs/ 로 만듭니다.
+    {% endcomment %}
+    
+    {% if paginator.page > 1 %}
+        {% assign current_page_suffix = '/page/' | append: paginator.page | append: '/' %}
+        {% assign base_path = page.url | replace: current_page_suffix, '/' | replace: 'index.html', '' %}
+    {% else %}
+        {% assign base_path = page.url | replace: 'index.html', '' %}
+    {% endif %}
+
     {% if paginator.previous_page %}
         <a href="{{ paginator.previous_page_path }}" class="pagination_button">&lt;</a>
     {% endif %}
@@ -7,9 +19,10 @@
         {% if i == paginator.page %}
             <span class="pagination_button_select" style="font-weight: bold; border-bottom: 2px solid #333;">{{ i }}</span>
         {% elsif i == 1 %}
-            <a href="{{ paginator.baseurl | replace: '//', '/' }}"><span class="pagination_button">1</span></a>
+            <a href="{{ base_path | replace: '//', '/' }}"><span class="pagination_button">1</span></a>
         {% else %}
-            <a href="{{ paginator.baseurl | append: '/page/' | append: i | append: '/' | replace: '//', '/' }}"><span class="pagination_button">{{ i }}</span></a>
+            {% assign target_path = base_path | append: '/page/' | append: i | append: '/' %}
+            <a href="{{ target_path | replace: '//', '/' }}"><span class="pagination_button">{{ i }}</span></a>
         {% endif %}
     {% endfor %}
 

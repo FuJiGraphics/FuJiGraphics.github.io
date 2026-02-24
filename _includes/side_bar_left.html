@@ -24,8 +24,13 @@
       <div class="side_bar_work_kr">
         소프트웨어 엔지니어<br />N/A
       </div>
+      
       <div class="side_bar_hitcount">
-        <img alt="Hits" src="https://hits.sh/FuJiGraphics.github.io.svg?view=today-total&style=plastic&label=Page%20Views&extraCount=8563&color=000000"/>
+        {% if jekyll.environment == "production" %}
+          <img alt="Hits" src="https://hits.sh/FuJiGraphics.github.io.svg?view=today-total&style=plastic&label=Page%20Views&extraCount=8563&color=000000"/>
+        {% else %}
+          <span style="font-size: 11px; color: #999; display: inline-block; padding: 5px;"><i class="fas fa-chart-line"></i> 로컬(개발) 카운트 정지됨</span>
+        {% endif %}
       </div>
       <div class="side_bar_button" id="side_bar_enmail">
         <i class="far fa-envelope"></i> <span>chlcjfwls1@naver.com</span>

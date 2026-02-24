@@ -5,16 +5,18 @@
       프로필
     </div>
 
-    {% assign tech_posts = site.posts | where: 'type', 'tech' %}
+    {% assign tech_posts = site.posts | where: 'categories', 'tech' %}
     <div class="side_bar_super_list" id="side_bar_tech">
       테크노트
       <div class="side_bar_post_count2">
         ( {{ tech_posts.size }} )
       </div>
     </div>
+    
     {% for item in site.data.tags.tech %}
-    <div class="side_bar_sub_list" id="side_bar_{{item}}">
-      <span>{{item}}</span>
+    {% assign slug = item | slugify %}
+    <div class="side_bar_sub_list" id="side_bar_{{ slug }}">
+      <span>{{ item }}</span>
       <div class="side_bar_post_count">
         {% assign post_a1 = tech_posts | where: 'tags', item %}
         ...  {{ post_a1.size }}
@@ -22,16 +24,18 @@
     </div>
     {% endfor %}
 
-    {% assign algo_posts = site.posts | where: 'type', 'algorithm' %}
+    {% assign algo_posts = site.posts | where: 'categories', 'algorithm' %}
     <div class="side_bar_super_list" id="side_bar_algorithm">
       알고리즘
       <div class="side_bar_post_count2">
         ( {{ algo_posts.size }} )
       </div>
     </div>
+    
     {% for item in site.data.tags.algorithm %}
-    <div class="side_bar_sub_list" id="side_bar_algo_{{item}}">
-      <span>{{item}}</span>
+    {% assign slug = item | slugify %}
+    <div class="side_bar_sub_list" id="side_bar_algo_{{ slug }}">
+      <span>{{ item }}</span>
       <div class="side_bar_post_count">
         {% assign post_a2 = algo_posts | where: 'tags', item %}
         ...  {{ post_a2.size }}
@@ -51,33 +55,65 @@
   })
 
   document.getElementById('side_bar_profile').addEventListener('click', () => {
-    location.href = "/profile"
+    location.href = "/profile/"
   })
 
   document.getElementById('side_bar_tech').addEventListener('click', () => {
-    location.href = "/tech"
+    location.href = "/tech/"
   })
 
   document.getElementById('side_bar_algorithm').addEventListener('click', () => {
-    location.href = "/algorithm"
+    location.href = "/algorithm/"
   })
 
   document.getElementById('side_bar_life').addEventListener('click', () => {
-    location.href = "/life"
+    location.href = "/life/"
   })
 
-  // 테크노트 쪽 태그를 누르면 /tech 경로 안에서 필터링
+  // === 글이 0개일 때 빈 화면 UI를 띄우는 공통 함수 ===
+  function showEmptyState(e) {
+    e.preventDefault(); // 페이지 이동(404)을 막음
+    
+    // 1. 현재 화면의 포스트 숨기기
+    document.querySelectorAll('.catalogue2-item.list').forEach(el => el.style.display = 'none');
+    
+    // 2. 페이지네이션 버튼 숨기기
+    const pagination = document.querySelector('.pagination');
+    if (pagination) pagination.style.display = 'none';
+    
+    // 3. emptyDiv 숨김 해제하기
+    const emptyDiv = document.getElementById('emptyDiv');
+    if (emptyDiv) {
+      emptyDiv.classList.remove('hiddenEmptyDiv');
+      emptyDiv.style.display = 'block';
+    }
+  }
+
+  // 테크노트 쪽 태그 클릭 이벤트
+  {% assign tech_posts_script = site.posts | where: 'categories', 'tech' %}
   {% for item in site.data.tags.tech %}
-    document.getElementById('side_bar_{{item}}').addEventListener('click', () => {
-      location.href = "/tech/?tag={{item}}"
+    {% assign slug = item | slugify %}
+    {% assign count = tech_posts_script | where: 'tags', item | size %}
+    document.getElementById('side_bar_{{ slug }}').addEventListener('click', (e) => {
+      {% if count > 0 %}
+        location.href = "/tag/{{ slug }}/"
+      {% else %}
+        showEmptyState(e);
+      {% endif %}
     })
   {% endfor %}
 
-  // 알고리즘 쪽 태그를 누르면 /algorithm 경로 안에서 필터링
+  // 알고리즘 쪽 태그 클릭 이벤트
+  {% assign algo_posts_script = site.posts | where: 'categories', 'algorithm' %}
   {% for item in site.data.tags.algorithm %}
-    document.getElementById('side_bar_algo_{{item}}').addEventListener('click', () => {
-      location.href = "/algorithm/?tag={{item}}"
+    {% assign slug = item | slugify %}
+    {% assign count = algo_posts_script | where: 'tags', item | size %}
+    document.getElementById('side_bar_algo_{{ slug }}').addEventListener('click', (e) => {
+      {% if count > 0 %}
+        location.href = "/tag/{{ slug }}/"
+      {% else %}
+        showEmptyState(e);
+      {% endif %}
     })
   {% endfor %}
-
 </script>
