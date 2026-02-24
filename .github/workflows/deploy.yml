@@ -2,7 +2,7 @@ name: Deploy Jekyll site to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # 만약 브랜치 이름이 master라면 "master"로 변경하세요.
+    branches: ["master"] # 만약 브랜치 이름이 master라면 "master"로 변경하세요.
   workflow_dispatch:
 
 permissions:
