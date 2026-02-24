@@ -2,20 +2,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- HTML Meta Tags -->
   <title>{% if page.home == true %}{{ site.title }}{% elsif page.main == true %}{{ page.title }} | {{ site.title }}{% else %}{{ page.title }}{% endif %}</title>
   <meta name="description" content="{% if page.home == true %}{{ site.description }}{% else %}{{ site.title }}{% endif %}">
 
-  <!-- Naver Search Engine Tag -->
   <meta name="naver-site-verification" content="e28db58146ca81c6de242e392a1d2dcda821d84b" />
 
-  <!-- Google / Search Engine Tags -->
   <meta name="google-site-verification" content="nsvtdgPWWPGWcye6qWeo_psQsEvNcNoi_XUJG_qukoM" />
   <meta itemprop="name" content="{% if page.home == true %}{{ site.title }}{% elsif page.main == true %}{{ page.title }} | {{ site.title }}{% else %}{{ page.title }}{% endif %}">
   <meta itemprop="description" content="{% if page.home == true %}{{ site.description }}{% else %}{{ site:title }}{% endif %}">
   <meta itemprop="image" content="{% if page.post-header == true or page.project-header == true %}/assets/blog/{{page.date | date: '%Y-%m-%d'}}-TechPost/{{ page.header-img }}{% elsif page.recruit == true %}{{ site.url }}{{'/meta/meta_recruit_image.png'}}{% else %}{{ site.url }}{{'/meta/meta_image.png'}}{% endif %}">
 
-  <!-- Facebook Meta Tags -->
+  {% if jekyll.environment == "production" %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D4BH33MKK3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-D4BH33MKK3');
+  </script>
+  {% endif %}
+
   <meta property="og:url" content="{{ site.baseurl }}">
   <meta property="og:type" content="{% if page.post-header == true or page.project-header == true %}article{% else %}website{% endif %}">
   <meta property="og:title" content="{% if page.home == true %}{{ site.title }}{% elsif page.main == true %}{{ page.title }} | {{ site.title }}{% else %}{{ page.title }}{% endif %}">
@@ -24,22 +31,18 @@
   <meta property="og:image:width" content="1600">
   <meta property="og:image:height" content="900">
 
-  <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{% if page.home == true %}{{ site.title }}{% elsif page.main == true %}{{ page.title }} | {{ site.title }}{% else %}{{ page.title }}{% endif %}">
   <meta name="twitter:description" content="{% if page.home == true %}{{ site.description }}{% else %}{{ site:title }}{% endif %}">
   <meta name="twitter:image" content="{% if page.post-header == true or page.project-header == true %}/assets/blog/{{page.date | date: '%Y-%m-%d'}}-TechPost/{{ page.header-img }}{% elsif page.recruit == true %}{{ site.url }}{{'/meta/meta_recruit_image.png'}}{% else %}{{ site.url }}{{'/meta/meta_image.png'}}{% endif %}">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="{{ site.baseurl }}/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
   <link rel="shortcut icon" type="image/x-icon" href="/meta/favicon.ico">
   <link href="http://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css" rel="stylesheet" type="text/css">
 
-  <!--RSS-->
   <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml" title="{{ site.title }} Feed">
 
-  <!-- Script -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
