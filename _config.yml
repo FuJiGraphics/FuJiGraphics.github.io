@@ -28,6 +28,7 @@ pagination:
   per_page: 6
   permalink: '/page/:num/'
   index_page_name: 'index.html'
+  sort_reverse: true
 
 autopages:
   enabled: true
